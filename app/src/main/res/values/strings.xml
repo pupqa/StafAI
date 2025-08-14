@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Professional Skills  -->
+    <string name="professional_skills">Профессиональные навыки</string>
+    <string name="role">Роль</string>
+    <string name="duration">Сроки участия</string>
+    <string name="tech_stack">Стек технологий</string>
+    <string name="app_name">Аутстафф CV</string>
+    <!--  Navigation  -->
+    <string name="nav_list">Список резюме</string>
+    <string name="nav_form">Создать резюме</string>
+    <string name="nav_preview">Предпросмотр</string>
+    <string name="nav_dashboard">Панель управления</string>
+    <string name="back">Назад</string>
+    <string name="add">Добавить</string>
+    <string name="cancel">Закрыть</string>
+    <!--  Form  -->
+    <string name="personal_info">Общая информация</string>
+    <string name="full_name">ФИО</string>
+    <string name="specialization">Специализация</string>
+    <string name="specialization_filter">Специализация</string>
+    <string name="total_experience">Опыт (общий)</string>
+    <string name="experience">Опыт</string>
+    <string name="filters">Фильтры</string>
+    <string name="cv_control_panel">Панель управления CV</string>
+    <string name="specialization_experience">Опыт (по специальности)</string>
+    <string name="education">Образование</string>
+    <string name="about_me">О себе</string>
+    <string name="email">Электронная почта</string>
+    <string name="phone">Номер телефона</string>
+    <string name="location">Локация</string>
+    <string name="languages">Иностранные языки</string>
+    <string name="language_name">Язык</string>
+    <string name="language_level">Уровень</string>
+    <string name="operating_systems">Операционные системы</string>
+    <string name="programming_languages">Языки программирования</string>
+    <string name="frameworks">Фреймворки</string>
+    <string name="libraries">Библиотеки</string>
+    <string name="databases">Базы данных</string>
+    <string name="other_technologies">Другие технологии</string>
+    <string name="certifications">Сертификаты</string>
+    <string name="soft_skills">Гибкие навыки</string>
+    <string name="achievements">Достижения</string>
+    <string name="prof_achievements">Проф достижения</string>
+    <string name="projects">Проекты</string>
+    <string name="project">Проект</string>
+    <string name="project_name">Название проекта</string>
+    <string name="project_role">Роль в проекте</string>
+    <string name="project_duration">Сроки участия</string>
+    <string name="project_description">Описание проекта</string>
+    <string name="project_team_size">Размер команды</string>
+    <string name="project_industry">Индустрия</string>
+    <string name="project_technologies">Технологии</string>
+    <string name="main_tasks">Основные задачи</string>
+    <string name="project_achievements">Достижения в проекте</string>
+    <string name="summary">Краткое описание</string>
+    <string name="save">Сохранить</string>
+    <string name="retry">Повторить</string>
+    <string name="required_field">Это поле обязательно для заполнения</string>
+    <string name="required_field_all">Заполните все обязательные поля</string>
+    <string name="empty_resume_list">Нет резюме. Создайте ваше первое резюме!</string>
+    <!--  Dashboard  -->
+    <string name="dashboard_title">Панель управления</string>
+    <!--  Preview  -->
+    <string name="share">Поделиться</string>
+    <string name="download">Скачать</string>
+    <string name="analyze">Анализировать</string>
+    <string name="apply_suggestions">Применить предложения</string>
+    <!--  Errors  -->
+    <string name="error_loading">Не удалось загрузить резюме</string>
+    <string name="error_saving">Не удалось сохранить резюме</string>
+    <string name="error_deleting">Не удалось удалить резюме</string>
+    <string name="error_analyzing">Не удалось проанализировать резюме</string>
+    <string name="error_generating_pdf">Ошибка генерации PDF</string>
+    <string name="error_invalid_email">Пожалуйста, введите корректный email адрес</string>
+    <string name="error_invalid_phone">Пожалуйста, введите корректный номер телефона</string>
+    <string name="phone_format_hint">Формат: 88005553535</string>
+
+    <string name="share_pdf">Поделиться</string>
+    <string name="download_pdf">Скачать</string>
+    <string name="analyze_pdf">Анализ</string>
+    <string name="generating_pdf">Генерация PDF…</string>
+    <string name="analyzing_pdf">Анализ PDF…</string>
+    <string name="delete">Удалить</string>
+    <string name="delete_resume_title">Удалить резюме?</string>
+    <string name="delete_resume_message">Это действие нельзя отменить. Резюме будет удалено навсегда.</string>
+    <string name="delete_confirm">УДАЛИТЬ</string>
+    <string name="cancel_action">ОТМЕНА</string>
+
+    <string name="preview">Предпросмотр</string>
+
+    <string name="resume_analysis">Анализ резюме</string>
+
+    <string name="the_analysis_is_completed">Анализ завершен. Нажмите \"Анализировать\" для повторного анализа.</string>
+    <string name="choose_template_style">Выберите стиль шаблона</string>
+    <string name="template_test">Тестовый</string>
+</resources>

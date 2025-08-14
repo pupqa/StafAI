@@ -1,0 +1,106 @@
+package com.bober.autcsv.core.di
+
+import com.bober.autcsv.BuildConfig
+import com.bober.autcsv.core.constants.LlmConstants
+import com.bober.autcsv.core.utils.LlmLogger
+import com.bober.autcsv.data.api.llm.OpenRouterApi
+import com.bober.autcsv.data.api.llm.OpenRouterService
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
+import javax.inject.Named
+import javax.inject.Singleton
+
+@Module
+@InstallIn(SingletonComponent::class)
+object NetworkModule {
+    
+    @Provides
+    @Singleton
+    fun provideErrorInterceptor(): Interceptor {
+        return Interceptor { chain ->
+            val request = chain.request()
+            val response = chain.proceed(request)
+            
+            if (!response.isSuccessful) {
+                val errorBody = response.body?.string() ?: "Unknown error"
+                LlmLogger.logError("HTTP ${response.code} error: $errorBody")
+                
+                when (response.code) {
+                    400 -> {
+                        LlmLogger.logError("Bad Request (400): Проверьте корректность запроса к OpenRouter API")
+                    }
+                    401 -> {
+                        LlmLogger.logError("Unauthorized (401): Проверьте API ключ OpenRouter")
+                    }
+                    402 -> {
+                        LlmLogger.logError("Payment Required (402): Недостаточно кредитов. Уменьшите max_tokens или пополните баланс на https://openrouter.ai/settings/credits")
+                    }
+                    403 -> {
+                        LlmLogger.logError("Forbidden (403): Доступ запрещен к OpenRouter API")
+                    }
+                    429 -> {
+                        LlmLogger.logError("Too Many Requests (429): Превышен лимит запросов к OpenRouter API")
+                    }
+                    500 -> {
+                        LlmLogger.logError("Internal Server Error (500): Ошибка сервера OpenRouter")
+                    }
+                    else -> {
+                        LlmLogger.logError("HTTP ${response.code}: Неожиданная ошибка от OpenRouter API")
+                    }
+                }
+            }
+            
+            response
+        }
+    }
+    
+    @Provides
+    @Singleton
+    fun provideOkHttpClient(errorInterceptor: Interceptor): OkHttpClient {
+        return OkHttpClient.Builder()
+            .addInterceptor(errorInterceptor)
+            .addInterceptor(HttpLoggingInterceptor().apply {
+                level = if (BuildConfig.DEBUG) {
+                    HttpLoggingInterceptor.Level.BODY
+                } else {
+                    HttpLoggingInterceptor.Level.NONE
+                }
+            })
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(60, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .retryOnConnectionFailure(true)
+            .build()
+    }
+    
+    @Provides
+    @Singleton
+    fun provideOpenRouterApi(okHttpClient: OkHttpClient): OpenRouterApi {
+        return Retrofit.Builder()
+            .baseUrl(LlmConstants.OPENROUTER_BASE_URL)
+            .client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(OpenRouterApi::class.java)
+    }
+    
+    @Provides
+    @Named("openrouter_api_key")
+    fun provideOpenRouterApiKey(): String {
+        return BuildConfig.OPENROUTER_API_KEY
+    }
+
+    @Provides
+    @Singleton
+    fun provideOpenRouterService(api: OpenRouterApi, @Named("openrouter_api_key") apiKey: String): OpenRouterService {
+        return OpenRouterService(api, apiKey)
+    }
+} 

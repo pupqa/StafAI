@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AutCSV.Splash" parent="@style/Theme.AutCSV">
+        <item name="android:windowSplashScreenBackground">@color/cblack</item>
+        <!-- Optional: icon -->
+        <!-- <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item> -->
+        <item name="android:windowBackground">@color/cblack</item>
+    </style>
+</resources>
+
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.AutCSV" parent="android:Theme.Material.Light.NoActionBar" >
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <!-- Splash theme for pre-Android 12 -->
+    <style name="Theme.AutCSV.Splash" parent="@style/Theme.AutCSV">
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>
