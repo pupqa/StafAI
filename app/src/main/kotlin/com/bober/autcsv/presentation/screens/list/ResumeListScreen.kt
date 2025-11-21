@@ -3,7 +3,9 @@ package com.bober.autcsv.presentation.screens.list
 import android.content.Intent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.layout.Arrangement
@@ -52,6 +54,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalContext
@@ -62,8 +65,11 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.bober.autcsv.R
 import com.bober.autcsv.core.utils.LlmLogger
 import com.bober.autcsv.core.utils.PdfImportParser
+import com.bober.autcsv.domain.model.Resume
 import com.bober.autcsv.ui.theme.CBlackLight
 import com.bober.autcsv.ui.theme.CYellow
+import com.bober.autcsv.ui.theme.ErrorDark
+import com.bober.autcsv.ui.theme.Hint
 import com.bober.autcsv.ui.theme.White
 import kotlinx.coroutines.delay
 
@@ -295,23 +301,46 @@ fun ResumeListScreen(
 /**
  * Карточка резюме с горизонтальным свайпом для удаления.
  */
+
 @Composable
 fun SwipeableResumeCard(
-    resume: com.bober.autcsv.domain.model.Resume,
+    resume: Resume,
     onCardClick: () -> Unit,
     onDeleteClick: () -> Unit,
 ) {
     var offsetX by remember { mutableFloatStateOf(0f) }
-    val alpha by animateFloatAsState(
-        targetValue = if (offsetX != 0f) 1f else 0f,
-        label = "delete_alpha"
-    )
     var cardHeightPx by remember { mutableIntStateOf(0) }
+
     val density = LocalDensity.current
     val backgroundExtra = 8.dp
     val backgroundHeight = remember(cardHeightPx) {
         if (cardHeightPx > 0) with(density) { cardHeightPx.toDp() } + backgroundExtra - 6.dp else 110.dp
     }
+
+    // Максимальное смещение для свайпа (в пикселях)
+    val maxSwipeOffset = -200f
+
+    // Прогресс свайпа: 0.0 (не свайпнуто) → 1.0 (макс. свайп)
+    val swipeProgress = remember(offsetX) {
+        (-offsetX / -maxSwipeOffset).coerceIn(0f, 1f)
+    }
+
+    // Анимированный цвет фона: от error → SuccessColor
+    val backgroundColor by animateColorAsState(
+        targetValue = lerp(
+            start = Hint,
+            stop = MaterialTheme.colorScheme.error,
+            fraction = swipeProgress
+        ),
+        animationSpec = tween(durationMillis = 100), // короткая анимация для плавности
+        label = "swipe_background_color"
+    )
+
+    val alpha by animateFloatAsState(
+        targetValue = swipeProgress,
+        animationSpec = tween(100),
+        label = "delete_icon_alpha"
+    )
 
     Box(
         modifier = Modifier.fillMaxWidth()
@@ -322,7 +351,7 @@ fun SwipeableResumeCard(
                 .fillMaxWidth()
                 .height(backgroundHeight)
                 .background(
-                    color = MaterialTheme.colorScheme.error,
+                    color = backgroundColor,
                     shape = MaterialTheme.shapes.medium
                 )
                 .padding(16.dp),

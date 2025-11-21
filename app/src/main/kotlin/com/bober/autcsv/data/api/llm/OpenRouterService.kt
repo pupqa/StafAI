@@ -12,7 +12,7 @@ class OpenRouterService @Inject constructor(
     apiKey1: String,
 ) {
     companion object {
-        private const val MODEL_ID = "anthropic/claude-3-5-sonnet-20241022"
+        private const val MODEL_ID = "anthropic/claude-3-5-sonnet"
     }
 
     private val apiKey = apiKey1
@@ -22,11 +22,18 @@ class OpenRouterService @Inject constructor(
 
         // Список моделей в порядке приоритета
         val models = listOf(
-            "anthropic/claude-3-5-sonnet-20241022",
-            "anthropic/claude-3-5-haiku-20241022",
+            "anthropic/claude-3-5-sonnet",
+            "anthropic/claude-3-5-haiku",
             "openai/gpt-4o",
             "openai/gpt-4o-mini",
-            "mistralai/mistral-large-latest"
+            "qwen/qwen-1.8b_chat",
+            "mistralai/mistral-nemo",
+            "mistralai/mistral-large-2407",
+            "openchat/openchat-3.5-1210",           // ✅ бесплатная, хороша на русском
+            "google/gemma-7b-it",                   // ✅ бесплатная
+            "microsoft/phi-3-mini-128k-instruct",   // ✅ бесплатная
+            "qwen/qwen-1.5-4b-chat",                // ✅ правильный ID для Qwen 4B
+            "qwen/qwen-1.5-1.8bchat"               // ✅ правильный ID для Qwen 1.8B
         )
 
         var lastException: Exception? = null

@@ -28,7 +28,12 @@ class LlmRepositoryImpl @Inject constructor(
         OpenRouterConfig.GPT_4O_MINI,
         OpenRouterConfig.MISTRAL_LARGE,
         OpenRouterConfig.MISTRAL_MEDIUM,
-        OpenRouterConfig.MISTRAL_SMALL
+        OpenRouterConfig.MISTRAL_SMALL,
+        OpenRouterConfig.OPENCHAT,
+        OpenRouterConfig.GEMMA,
+        OpenRouterConfig.PHI,
+        OpenRouterConfig.QWEN_4B,
+        OpenRouterConfig.QWEN_18B
     )
 
     override suspend fun analyzeCV(cvContent: String): Result<CvAnalysis> = runCatching {

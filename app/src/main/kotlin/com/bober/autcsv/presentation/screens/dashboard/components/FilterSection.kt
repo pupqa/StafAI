@@ -7,15 +7,12 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Clear
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -54,22 +51,16 @@ fun FilterSection(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(
-                text = stringResource(R.string.filters),
-                style = MaterialTheme.typography.titleMedium
-            )
 
             if (filters.hasActiveFilters()) {
                 Button(
                     onClick = onClearFilters,
-                    modifier = Modifier.padding(start = 8.dp)
+                    modifier = Modifier.padding(start = 8.dp),
+                    shape = RoundedCornerShape(12.dp)
                 ) {
-                    Icon(
-                        imageVector = Icons.Default.Clear,
-                        contentDescription = "Clear filters",
-                        modifier = Modifier.padding(end = 4.dp)
+                    Text(
+                        text = stringResource(R.string.clear_all_filters)
                     )
-                    Text("Очистить")
                 }
             }
         }
@@ -80,7 +71,6 @@ fun FilterSection(
                 .padding(top = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            // Experience Level Filter (multi-select)
             item {
                 Box {
                     FilterChip(
@@ -164,7 +154,7 @@ fun FilterSection(
                         onClick = { showLanguageMenu = true },
                         label = {
                             Text(
-                                if (filters.languages.isEmpty()) stringResource(R.string.language_name)
+                                if (filters.languages.isEmpty()) stringResource(R.string.languages_name)
                                 else filters.languages.joinToString(", ")
                             )
                         }

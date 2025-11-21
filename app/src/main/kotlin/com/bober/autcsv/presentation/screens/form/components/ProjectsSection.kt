@@ -50,7 +50,7 @@ fun ProjectsSection(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(8.dp)
+                .padding(16.dp)
         ) {
             Text(
                 text = stringResource(R.string.projects),

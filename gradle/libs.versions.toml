@@ -8,20 +8,28 @@ coreKtx = "1.17.0"
 junit = "4.13.2"
 junitVersion = "1.3.0"
 espressoCore = "3.7.0"
-lifecycleRuntimeKtx = "2.9.2"
-activityCompose = "1.10.1"
+lifecycleRuntimeKtx = "2.9.4"
+activityCompose = "1.11.0"
 composeBom = "2025.08.00"
-room = "2.7.2"
+room = "2.8.2"
 retrofit = "3.0.0"
-okhttp = "5.1.0"
-hilt = "2.57"
-hiltNavigationCompose = "1.2.0"
-navigationCompose = "2.9.3"
+okhttp = "5.2.1"
+hilt = "2.57.2"
+hiltNavigationCompose = "1.3.0"
+navigationCompose = "2.9.5"
 pdfbox = "3.0.5"
 coroutines = "1.10.2"
 turbine = "1.0.0"
-mockk = "1.14.5"
+mockk = "1.14.6"
 openai = "4.0.1"
+ktor = "3.3.1"
+ui = "1.9.3"
+
+kotlinxSerialization = "1.9.0"
+googleServices = "4.4.2"
+googleAuth = "21.3.0"
+credentialsPlayServices = "1.5.0"
+credentialsManager = "1.0.0"
 
 [libraries]
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen" }
@@ -69,7 +77,10 @@ mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 openai = { group = "com.aallam.openai", name = "openai-client", version.ref = "openai" }
-ktor = { group = "io.ktor", name = "ktor-client-android", version = "2.3.8" }
+ktor = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
+ui = { group = "androidx.compose.ui", name = "ui", version.ref = "ui" }
+
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -77,3 +88,5 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }

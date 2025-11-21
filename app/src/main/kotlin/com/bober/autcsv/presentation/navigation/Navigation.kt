@@ -6,11 +6,13 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import androidx.navigation.toRoute
 import com.bober.autcsv.presentation.screens.analysis.AutAnalysisScreen
 import com.bober.autcsv.presentation.screens.dashboard.AutDashboardScreen
 import com.bober.autcsv.presentation.screens.form.ResumeFormScreen
 import com.bober.autcsv.presentation.screens.list.ResumeListScreen
 import com.bober.autcsv.presentation.screens.preview.ResumePreviewScreen
+import com.bober.autcsv.presentation.screens.splash.SplashScreen
 
 /**
  * Центральная конфигурация навигации Compose: объявляет все экраны, аргументы
@@ -20,121 +22,98 @@ import com.bober.autcsv.presentation.screens.preview.ResumePreviewScreen
 fun Navigation(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = Screen.ResumeList.route
+        startDestination = SplashRoute
     ) {
-        composable(Screen.ResumeList.route) {
-            ResumeListScreen(
-                onNavigateToForm = {
-                    navController.navigate(Screen.ResumeForm.route)
-                },
-                onNavigateToPreview = { resumeId ->
-                    navController.navigate(Screen.ResumePreview.createRoute(resumeId))
-                },
-                onNavigateToDashboard = {
-                    navController.navigate(Screen.Dashboard.route)
-                },
-                onNavigateToFormEdit = { resumeId ->
-                    navController.navigate(Screen.ResumeFormEdit.createRoute(resumeId))
+        composable<SplashRoute> {
+            SplashScreen(
+                onNavigateToMain = {
+                    navController.navigate(ResumeListRoute)
                 }
             )
         }
-        composable(Screen.ResumeForm.route) {
+
+        composable<ResumeListRoute> {
+            ResumeListScreen(
+                onNavigateToForm = {
+                    navController.navigate(ResumeFormRoute)
+                },
+                onNavigateToPreview = { resumeId ->
+                    navController.navigate(ResumePreviewRoute(resumeId))
+                },
+                onNavigateToDashboard = {
+                    navController.navigate(DashboardRoute)
+                },
+                onNavigateToFormEdit = { resumeId ->
+                    navController.navigate(ResumeFormEditRoute(resumeId))
+                }
+            )
+        }
+
+        composable<ResumeFormRoute> {
             ResumeFormScreen(
                 onNavigateBack = {
                     navController.popBackStack()
                 },
                 onNavigateToPreview = { resumeId ->
-                    navController.navigate(Screen.ResumePreview.createRoute(resumeId)) {
-                        popUpTo(Screen.ResumeList.route)
+                    navController.navigate(ResumePreviewRoute(resumeId)) {
+                        popUpTo<ResumeListRoute>()
                     }
                 }
             )
         }
-        composable(
-            route = Screen.ResumeFormEdit.route,
-            arguments = listOf(
-                navArgument("resumeId") {
-                    type = NavType.StringType
-                    nullable = false
-                }
-            )
-        ) { backStackEntry ->
-            val resumeId = backStackEntry.arguments?.getString("resumeId")
-            if (resumeId == null) {
-                navController.popBackStack()
-                return@composable
-            }
+
+        composable<ResumeFormEditRoute> { backStackEntry ->
+            val route = backStackEntry.toRoute<ResumeFormEditRoute>()
             ResumeFormScreen(
                 onNavigateBack = {
                     navController.popBackStack()
                 },
                 onNavigateToPreview = { id ->
-                    navController.navigate(Screen.ResumePreview.createRoute(id)) {
-                        popUpTo(Screen.ResumeList.route)
+                    navController.navigate(ResumePreviewRoute(id)) {
+                        popUpTo<ResumeListRoute>()
                     }
                 }
             )
         }
-        composable(
-            route = Screen.ResumePreview.route,
-            arguments = listOf(
-                navArgument("resumeId") {
-                    type = NavType.StringType
-                    nullable = false
-                }
-            )
-        ) { backStackEntry ->
-            val resumeId = backStackEntry.arguments?.getString("resumeId")
-            if (resumeId == null) {
-                navController.popBackStack()
-                return@composable
-            }
+
+        composable<ResumePreviewRoute> { backStackEntry ->
+            val route = backStackEntry.toRoute<ResumePreviewRoute>()
             ResumePreviewScreen(
-                resumeId = resumeId,
+                resumeId = route.resumeId,
                 onNavigateBack = {
                     navController.popBackStack()
                 },
                 onNavigateToAnalysis = { resumeId ->
-                    navController.navigate(Screen.Analysis.createRoute(resumeId))
+                    navController.navigate(AnalysisRoute(resumeId))
                 }
             )
         }
-        composable(
-            route = Screen.Analysis.route,
-            arguments = listOf(
-                navArgument("resumeId") {
-                    type = NavType.StringType
-                    nullable = false
-                }
-            )
-        ) { backStackEntry ->
-            val resumeId = backStackEntry.arguments?.getString("resumeId")
-            if (resumeId == null) {
-                navController.popBackStack()
-                return@composable
-            }
+
+        composable<AnalysisRoute> { backStackEntry ->
+            val route = backStackEntry.toRoute<AnalysisRoute>()
             AutAnalysisScreen(
-                resumeId = resumeId,
+                resumeId = route.resumeId,
                 onNavigateBack = {
                     navController.popBackStack()
                 },
                 onNavigateToEdit = { id ->
-                    navController.navigate(Screen.ResumeFormEdit.createRoute(id))
+                    navController.navigate(ResumeFormEditRoute(id))
                 }
             )
         }
-        composable(Screen.Dashboard.route) {
+
+        composable<DashboardRoute> {
             AutDashboardScreen(
                 onNavigateBack = {
                     navController.popBackStack()
                 },
                 onNavigateToForm = {
-                    navController.navigate(Screen.ResumeForm.route)
+                    navController.navigate(ResumeFormRoute)
                 },
                 onNavigateToPreview = { resumeId ->
-                    navController.navigate(Screen.ResumePreview.createRoute(resumeId))
+                    navController.navigate(ResumePreviewRoute(resumeId))
                 }
             )
         }
     }
-} 
+}

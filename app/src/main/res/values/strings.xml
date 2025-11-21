@@ -5,10 +5,13 @@
     <string name="role">Роль</string>
     <string name="duration">Сроки участия</string>
     <string name="tech_stack">Стек технологий</string>
-    <string name="app_name">Аутстафф CV</string>
+    <string name="app_name">СтафИИ</string>
+
+    <string name="auth_app_name">Вход СтафИИ</string>
+    <string name="reg_app_name">Регистрация СтафИИ</string>
     <!--  Navigation  -->
     <string name="nav_list">Список резюме</string>
-    <string name="nav_form">Создать резюме</string>
+    <string name="nav_form">Создание резюме</string>
     <string name="nav_preview">Предпросмотр</string>
     <string name="nav_dashboard">Панель управления</string>
     <string name="back">Назад</string>
@@ -31,6 +34,7 @@
     <string name="location">Локация</string>
     <string name="languages">Иностранные языки</string>
     <string name="language_name">Язык</string>
+    <string name="languages_name">Языки</string>
     <string name="language_level">Уровень</string>
     <string name="operating_systems">Операционные системы</string>
     <string name="programming_languages">Языки программирования</string>
@@ -40,8 +44,8 @@
     <string name="other_technologies">Другие технологии</string>
     <string name="certifications">Сертификаты</string>
     <string name="soft_skills">Гибкие навыки</string>
-    <string name="achievements">Достижения</string>
-    <string name="prof_achievements">Проф достижения</string>
+    <string name="achievements">Достижение</string>
+    <string name="prof_achievements">Профессиональное достижение</string>
     <string name="projects">Проекты</string>
     <string name="project">Проект</string>
     <string name="project_name">Название проекта</string>
@@ -64,6 +68,7 @@
     <!--  Preview  -->
     <string name="share">Поделиться</string>
     <string name="download">Скачать</string>
+    <string name="open">Открыть</string>
     <string name="analyze">Анализировать</string>
     <string name="apply_suggestions">Применить предложения</string>
     <!--  Errors  -->
@@ -77,7 +82,7 @@
     <string name="phone_format_hint">Формат: 88005553535</string>
 
     <string name="share_pdf">Поделиться</string>
-    <string name="download_pdf">Скачать</string>
+    <string name="download_pdf">Предпросмотр</string>
     <string name="analyze_pdf">Анализ</string>
     <string name="generating_pdf">Генерация PDF…</string>
     <string name="analyzing_pdf">Анализ PDF…</string>
@@ -94,4 +99,46 @@
     <string name="the_analysis_is_completed">Анализ завершен. Нажмите \"Анализировать\" для повторного анализа.</string>
     <string name="choose_template_style">Выберите стиль шаблона</string>
     <string name="template_test">Тестовый</string>
+
+    <string name="create_prof_resume">Создавай профессиональные резюме с ИИ</string>
+
+    <!-- Logout Dialog -->
+    <string name="logout_title">Выход из аккаунта</string>
+    <string name="logout_message">Вы уверены, что хотите выйти из аккаунта?</string>
+    <string name="logout_confirm">ВЫЙТИ</string>
+    <string name="logout_cancel">ОТМЕНА</string>
+
+    <!-- Phone and Google Authentication -->
+    <string name="phone_auth_title">Вход по номеру телефона</string>
+    <string name="enter_phone_number">Введите номер телефона</string>
+    <string name="phone_number_hint">+7 (999) 123-45-67</string>
+    <string name="send_verification_code">Отправить код</string>
+    <string name="enter_verification_code">Введите код подтверждения</string>
+    <string name="verification_code_hint">123456</string>
+    <string name="verify_code">Подтвердить код</string>
+    <string name="resend_code">Отправить код повторно</string>
+    <string name="verification_code_sent">Код подтверждения отправлен на %s</string>
+
+    <string name="google_sign_in">Войти через Google</string>
+    <string name="sign_in_with_email">Войти через email</string>
+    <string name="sign_in_with_phone">Войти по телефону</string>
+    <string name="or_divider">или</string>
+
+    <!-- Auth Method Selection -->
+    <string name="choose_auth_method">Выберите способ входа</string>
+    <string name="back_to_auth_methods">Назад к способам входа</string>
+
+    <!-- Phone Auth Errors -->
+    <string name="error_invalid_phone_format">Неверный формат номера телефона</string>
+    <string name="error_verification_code_invalid">Неверный код подтверждения</string>
+    <string name="error_verification_code_expired">Код подтверждения истек</string>
+    <string name="error_phone_auth_failed">Ошибка аутентификации по телефону</string>
+
+    <!-- Google Auth Errors -->
+    <string name="error_google_sign_in_failed">Ошибка входа через Google</string>
+    <string name="error_google_sign_in_cancelled">Вход через Google отменен</string>
+    <string name="error_google_account_not_found">Аккаунт Google не найден</string>
+
+
+    <string name="clear_all_filters">Сбросить все</string>
 </resources>

@@ -56,7 +56,7 @@ fun ProfessionalSkillsSection(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(8.dp)
+                .padding(16.dp)
         ) {
             Text(
                 text = stringResource(R.string.professional_skills),
@@ -232,7 +232,7 @@ fun ProfessionalSkillsSection(
                     viewModel.onEvent(ResumeFormEvent.AddProfessionalAchievement)
                 },
                 modifier = Modifier.align(Alignment.End),
-                shape = RoundedCornerShape(12.dp)
+                shape = RoundedCornerShape(16.dp)
             ) {
                 Icon(Icons.Default.Add, contentDescription = null)
                 Spacer(modifier = Modifier.width(8.dp))
