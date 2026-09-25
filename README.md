@@ -253,7 +253,7 @@ app/schemas/…/ResumeDatabase/N.json   # экспортируемые схем�
 
 ## Известные ограничения и планы
 
-2. Gson использует reflection — кандидат на замену на kotlinx.serialization (важно для будущей кроссплатформенности, см. ниже).
-3. R8-минификация для release включена (keep-правила для Gson/pdfbox — в `proguard-rules.pro`); перед публикацией прогнать смоук-тест экспорта/импорта на реальном устройстве.
-4. Сборка: `kapt` переведён на **KSP**, включены parallel/caching/configuration-cache (`gradle.properties`); тёплая no-op сборка ≈ 1–2 с, release-APK ≈ 12 МБ (фильтр локалей en/ru + R8 + shrinkResources).
-5. Рассматривается миграция на **Kotlin Multiplatform** (Android/iOS): переносимы домен, CSV-экспорт, парсер, словари; потребуются замены Gson → kotlinx.serialization, Retrofit → Ktor, `java.util.zip` → okio, PDF-движка на expect/actual. Детальный анализ уже выполнен в истории обсуждений проекта.
+1. Gson использует reflection — кандидат на замену на kotlinx.serialization (важно для будущей кроссплатформенности, см. ниже).
+2. R8-минификация для release включена (keep-правила для Gson/pdfbox — в `proguard-rules.pro`); перед публикацией прогнать смоук-тест экспорта/импорта на реальном устройстве.
+3. Сборка: `kapt` переведён на **KSP**, включены parallel/caching/configuration-cache (`gradle.properties`); тёплая no-op сборка ≈ 1–2 с, release-APK ≈ 12 МБ (фильтр локалей en/ru + R8 + shrinkResources).
+4. Рассматривается миграция на **Kotlin Multiplatform** (Android/iOS): переносимы домен, CSV-экспорт, парсер, словари; потребуются замены Gson → kotlinx.serialization, Retrofit → Ktor, `java.util.zip` → okio, PDF-движка на expect/actual. Детальный анализ уже выполнен в истории обсуждений проекта.
