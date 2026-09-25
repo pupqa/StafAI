@@ -192,16 +192,32 @@ data class CvAnalysis(
         private fun extractAdditionalParameters(content: String): Map<String, String> {
             val parameters = mutableMapOf<String, String>()
 
+            // Ключевые слова на обоих языках: ответ LLM приходит на языке
+            // интерфейса; каноническое имя параметра сохраняется как в ru-версии
             val paramKeywords = mapOf(
-                "Актуальность технологий" to listOf("актуальность", "технологии", "современность"),
+                "Актуальность технологий" to listOf(
+                    "актуальность", "технологии", "современность",
+                    "technology relevance", "technologies", "relevance"
+                ),
                 "Соответствие специализации" to listOf(
                     "соответствие",
                     "специализация",
-                    "релевантность"
+                    "релевантность",
+                    "specialization match",
+                    "specialization"
                 ),
-                "Качество описания проектов" to listOf("качество", "описание", "проекты"),
-                "Логичность структуры" to listOf("логичность", "структура", "организация"),
-                "Конкретность достижений" to listOf("конкретность", "достижения", "результаты")
+                "Качество описания проектов" to listOf(
+                    "качество", "описание", "проекты",
+                    "project description quality", "project quality"
+                ),
+                "Логичность структуры" to listOf(
+                    "логичность", "структура", "организация",
+                    "structure logic", "structure"
+                ),
+                "Конкретность достижений" to listOf(
+                    "конкретность", "достижения", "результаты",
+                    "specificity of achievements", "achievements specificity"
+                )
             )
 
             for ((paramName, keywords) in paramKeywords) {

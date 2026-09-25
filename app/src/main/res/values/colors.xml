@@ -7,6 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
     <color name="cblack">#FF1A1A1A</color>
+
+    <!-- Соответствуют LightAppPalette в AppColors.kt / Color.kt -->
+    <color name="background_soft">#FF181613</color>
+    <color name="splash_badge">#FFEDEAE2</color>
 </resources>

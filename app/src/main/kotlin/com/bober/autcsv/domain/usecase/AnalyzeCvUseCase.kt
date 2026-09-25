@@ -5,6 +5,11 @@ import com.bober.autcsv.domain.model.CvAnalysis
 import com.bober.autcsv.domain.repository.LlmRepository
 import javax.inject.Inject
 
+/**
+ * Запускает реальный LLM-анализ текста резюме через [LlmRepository]:
+ * репозиторий сам выбирает модель (фолбэк по цепочке), объём токенов
+ * и парсит строгий JSON-ответ в [CvAnalysis].
+ */
 class AnalyzeCvUseCase @Inject constructor(
     private val repository: LlmRepository,
 ) {
@@ -18,11 +23,18 @@ class AnalyzeCvUseCase @Inject constructor(
 
         return try {
             val result = repository.analyzeCV(cvContent)
+
             val duration = System.currentTimeMillis() - startTime
             LlmLogger.logPerformance("AnalyzeCvUseCase", duration)
 
             result.onSuccess { analysis ->
                 LlmLogger.logAnalysisResult("UseCase", "Анализ успешно завершен")
+                LlmLogger.logAnalysisResult(
+                    "UseCase",
+                    "Completeness: ${analysis.completenessScore}%, " +
+                            "Strengths: ${analysis.strengths.size}, " +
+                            "Recommendations: ${analysis.recommendations.size}"
+                )
             }.onFailure { error ->
                 LlmLogger.logError("AnalyzeCvUseCase завершился с ошибкой", error)
             }
@@ -35,4 +47,4 @@ class AnalyzeCvUseCase @Inject constructor(
             Result.failure(e)
         }
     }
-} 
+}

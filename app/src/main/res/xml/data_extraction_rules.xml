@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-   Sample data extraction rules file; uncomment and customize as necessary.
-   See https://developer.android.com/about/versions/12/backup-restore#xml-changes
-   for details.
+   Правила извлечения данных для cloud-backup и переноса на новое
+   устройство (Android 12L+). База резюме бэкапится осознанно — это данные
+   пользователя; хранилища с API-ключом исключены: ключ не должен покидать
+   устройство, а EncryptedSharedPreferences после восстановления на другом
+   устройстве всё равно не расшифровывается (мастер-ключ в Keystore).
 -->
 <data-extraction-rules>
     <cloud-backup>
-        <!-- TODO: Use <include> and <exclude> to control what is backed up.
-        <include .../>
-        <exclude .../>
-        -->
+        <exclude domain="sharedpref" path="secure_api_keys.xml" />
+        <exclude domain="sharedpref" path="secure_api_keys_fallback.xml" />
     </cloud-backup>
-    <!--
     <device-transfer>
-        <include .../>
-        <exclude .../>
+        <exclude domain="sharedpref" path="secure_api_keys.xml" />
+        <exclude domain="sharedpref" path="secure_api_keys_fallback.xml" />
     </device-transfer>
-    -->
 </data-extraction-rules>

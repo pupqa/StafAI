@@ -22,14 +22,57 @@ interface ResumeDao {
     suspend fun getResumeById(id: String): ResumeEntity?
 
     /**
-     * Поток всех резюме. Подходит для отображения списка и автообновлений UI.
+     * Поток активных (не удалённых) резюме. Подходит для отображения списка и автообновлений UI.
      */
-    @Query("SELECT * FROM resumes")
+    @Query("SELECT * FROM resumes WHERE isDeleted = 0")
     fun getAllResumes(): Flow<List<ResumeEntity>>
 
     /**
-     * Удаляет резюме по идентификатору.
+     * Разовое чтение всех активных резюме (без Flow): для экспорта CSV.
+     */
+    @Query("SELECT * FROM resumes WHERE isDeleted = 0")
+    suspend fun getAllResumesOnce(): List<ResumeEntity>
+
+    /**
+     * Разовое чтение всей таблицы, включая корзину: бэкап должен быть полным,
+     * иначе удалённые, но восстанавливаемые резюме теряются при переносе.
+     */
+    @Query("SELECT * FROM resumes")
+    suspend fun getAllResumesIncludingDeletedOnce(): List<ResumeEntity>
+
+    /**
+     * Идентификаторы резюме в корзине — для каскадной очистки писем/фото.
+     */
+    @Query("SELECT id FROM resumes WHERE isDeleted = 1")
+    suspend fun getTrashIds(): List<String>
+
+    /**
+     * Поток резюме в корзине — удалённых мягко, но ещё не стёртых окончательно.
+     */
+    @Query("SELECT * FROM resumes WHERE isDeleted = 1 ORDER BY deletedAt DESC")
+    fun getDeletedResumes(): Flow<List<ResumeEntity>>
+
+    /**
+     * Мягкое удаление: переносит резюме в корзину с отметкой времени.
+     */
+    @Query("UPDATE resumes SET isDeleted = 1, deletedAt = :timestamp WHERE id = :id")
+    suspend fun moveToTrash(id: String, timestamp: Long)
+
+    /**
+     * Восстанавливает резюме из корзины, возвращая его в общий список.
+     */
+    @Query("UPDATE resumes SET isDeleted = 0, deletedAt = 0 WHERE id = :id")
+    suspend fun restoreResume(id: String)
+
+    /**
+     * Окончательно удаляет резюме по идентификатору.
      */
     @Query("DELETE FROM resumes WHERE id = :id")
     suspend fun deleteResume(id: String)
-} 
+
+    /**
+     * Окончательно очищает корзину.
+     */
+    @Query("DELETE FROM resumes WHERE isDeleted = 1")
+    suspend fun emptyTrash()
+}

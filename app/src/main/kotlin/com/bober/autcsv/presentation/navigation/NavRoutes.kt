@@ -25,3 +25,21 @@ data class AnalysisRoute(val resumeId: String)
 
 @Serializable
 object DashboardRoute
+
+@Serializable
+object SettingsRoute
+
+@Serializable
+object HelpRoute
+
+@Serializable
+object AboutRoute
+
+@Serializable
+object PrivacyPolicyRoute
+
+@Serializable
+data class CoverLetterRoute(val resumeId: String)
+
+@Serializable
+object TrashRoute

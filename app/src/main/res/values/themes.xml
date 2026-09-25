@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.AutCSV" parent="android:Theme.Material.Light.NoActionBar" >
+    <!-- AppCompat-тема обязательна для AppCompatActivity: только она
+         применяет per-app locales (AppCompatDelegate) на API < 33 -->
+    <style name="Theme.AutCSV" parent="Theme.AppCompat.DayNight.NoActionBar" >
         <item name="android:windowIsTranslucent">false</item>
     </style>
 

@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 5,
-    "identityHash": "6ce7be032988e6cef165fc3008045e6e",
+    "identityHash": "968532fac799cae88bf54ef3de434438",
     "entities": [
       {
         "tableName": "resumes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `fullName` TEXT NOT NULL, `specialization` TEXT NOT NULL, `totalExperience` TEXT NOT NULL, `specializationExperience` TEXT NOT NULL, `education` TEXT NOT NULL, `email` TEXT NOT NULL, `phone` TEXT NOT NULL, `location` TEXT NOT NULL, `aboutMe` TEXT NOT NULL, `languages` TEXT NOT NULL, `operatingSystems` TEXT NOT NULL, `programmingLanguages` TEXT NOT NULL, `frameworks` TEXT NOT NULL, `libraries` TEXT NOT NULL, `databases` TEXT NOT NULL, `otherTechnologies` TEXT NOT NULL, `professionalAchievements` TEXT NOT NULL, `certifications` TEXT NOT NULL, `softSkills` TEXT NOT NULL, `projects` TEXT NOT NULL, `summary` TEXT NOT NULL, `lastModified` INTEGER NOT NULL, `aiAnalysis` TEXT NOT NULL, `lastAnalysisPromptVersion` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `fullName` TEXT NOT NULL, `specialization` TEXT NOT NULL, `totalExperience` TEXT NOT NULL, `specializationExperience` TEXT NOT NULL, `education` TEXT NOT NULL, `email` TEXT NOT NULL, `phone` TEXT NOT NULL, `location` TEXT NOT NULL, `aboutMe` TEXT NOT NULL, `languages` TEXT NOT NULL, `operatingSystems` TEXT NOT NULL, `programmingLanguages` TEXT NOT NULL, `frameworks` TEXT NOT NULL, `libraries` TEXT NOT NULL, `databases` TEXT NOT NULL, `otherTechnologies` TEXT NOT NULL, `professionalAchievements` TEXT NOT NULL, `certifications` TEXT NOT NULL, `softSkills` TEXT NOT NULL, `projects` TEXT NOT NULL, `summary` TEXT NOT NULL, `lastModified` INTEGER NOT NULL, `aiAnalysis` TEXT NOT NULL, `isDeleted` INTEGER NOT NULL, `deletedAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -153,8 +153,14 @@
             "notNull": true
           },
           {
-            "fieldPath": "lastAnalysisPromptVersion",
-            "columnName": "lastAnalysisPromptVersion",
+            "fieldPath": "isDeleted",
+            "columnName": "isDeleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deletedAt",
+            "columnName": "deletedAt",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -169,7 +175,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6ce7be032988e6cef165fc3008045e6e')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '968532fac799cae88bf54ef3de434438')"
     ]
   }
 }

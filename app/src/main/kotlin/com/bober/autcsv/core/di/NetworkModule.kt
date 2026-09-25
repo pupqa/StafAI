@@ -36,7 +36,11 @@ object NetworkModule {
             val response = chain.proceed(request)
 
             if (!response.isSuccessful) {
-                val errorBody = response.body?.string() ?: "Unknown error"
+                // peekBody оставляет тело нетронутым для downstream-обработчиков
+                // (HttpException.errorBody()); обрезаем, чтобы не льёт в лог
+                val errorBody = runCatching {
+                    response.peekBody(1L shl 20).string().take(400)
+                }.getOrNull() ?: "Unknown error"
                 LlmLogger.logError("HTTP ${response.code} error: $errorBody")
 
                 when (response.code) {
@@ -122,12 +126,14 @@ object NetworkModule {
     @Provides
     @Singleton
             /**
-             * Сервис-обертка над OpenRouter API.
+             * Сервис-обертка над OpenRouter API: ключ читается лениво,
+             * сохранённый пользователем приоритетнее ключа сборки.
              */
     fun provideOpenRouterService(
         api: OpenRouterApi,
+        apiKeyStore: com.bober.autcsv.core.utils.ApiKeyStore,
         @Named("openrouter_api_key") apiKey: String,
     ): OpenRouterService {
-        return OpenRouterService(api, apiKey)
+        return OpenRouterService(api, apiKeyStore, apiKey)
     }
-} 
+}

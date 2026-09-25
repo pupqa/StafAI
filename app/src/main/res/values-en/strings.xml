@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="professional_skills">Professional Skills</string>
+    <string name="role">Role</string>
+    <string name="duration">Duration</string>
+    <string name="tech_stack">Tech Stack</string>
+    <string name="app_name">StaffAI</string>
+    <string name="auth_app_name">StaffAI Sign In</string>
+    <string name="reg_app_name">StaffAI Sign Up</string>
+    <string name="nav_list">Resume List</string>
+    <string name="nav_form">Create Resume</string>
+    <string name="nav_preview">Preview</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_trash">Trash</string>
+    <string name="back">Back</string>
+    <string name="add">Add</string>
+    <string name="edit_resume">Edit</string>
+    <string name="drafts_section">Drafts</string>
+    <string name="draft_badge">Draft</string>
+    <string name="draft_hint">Resume isn\'t complete — tap to continue</string>
+    <string name="cancel">Close</string>
+    <string name="personal_info">General Information</string>
+    <string name="full_name">Full Name</string>
+    <string name="specialization">Desired Position</string>
+    <string name="specialization_filter">Specialization</string>
+    <string name="total_experience">Total Experience (years)</string>
+    <string name="experience">Experience</string>
+    <string name="settings_section_api">API Key</string>
+    <string name="settings_api_key_description">The key is used to access the language model. It\'s stored locally on your device.</string>
+    <string name="settings_api_key_label">API Key</string>
+    <string name="settings_show_key">Show Key</string>
+    <string name="settings_hide_key">Hide Key</string>
+    <string name="settings_api_key_save">Save Key</string>
+    <string name="settings_api_key_saved">Saved</string>
+    <string name="settings_api_key_saved_snackbar">API key saved</string>
+    <string name="settings_section_appearance">Appearance</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_theme_hint">No app restart required</string>
+    <string name="settings_section_app">App</string>
+    <string name="settings_language_row">Interface Language</string>
+    <string name="settings_language_ru">Русский</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_help">Help</string>
+    <string name="settings_about">About</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="version_footer">StaffAI · version %1$s (%2$d)</string>
+    <string name="filters">Filters</string>
+    <string name="cv_control_panel">CV Control Panel</string>
+    <string name="specialization_experience">Experience in Specialization (years)</string>
+    <string name="education">Education</string>
+    <string name="about_me">About Me</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone Number</string>
+    <string name="location">City</string>
+    <string name="languages">Foreign Languages</string>
+    <string name="language_name">Language</string>
+    <string name="languages_name">Languages</string>
+    <string name="language_level">Level</string>
+    <string name="skills">Skills</string>
+    <string name="hard_skills">Technical Skills (hard skills)</string>
+    <string name="operating_systems">Operating Systems</string>
+    <string name="programming_languages">Programming Languages</string>
+    <string name="frameworks">Frameworks</string>
+    <string name="libraries">Libraries</string>
+    <string name="databases">Databases</string>
+    <string name="other_technologies">Other Technologies</string>
+    <string name="certifications">Certifications</string>
+    <string name="soft_skills">Soft Skills</string>
+    <string name="soft_skills_hint">Choose a skill from the list or type your own and tap "Done"</string>
+    <string name="add_skill">Add Skill</string>
+    <string name="desired_job">Desired Job and Conditions</string>
+    <string name="employment">Desired Employment Type</string>
+    <string name="work_schedule">Desired Schedule</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="change_photo">Change Photo</string>
+    <string name="remove_photo">Remove Photo</string>
+    <string name="salary_from">Salary From (₽/mo)</string>
+    <string name="salary_to">Salary To (₽/mo)</string>
+    <string name="salary_hint">Amount in rubles, e.g. 150000</string>
+    <string name="relocation">Willing to Relocate</string>
+    <string name="relocation_required_hint">Required field: select an option</string>
+    <string name="relocation_cities">Relocation Cities</string>
+    <string name="relocation_cities_hint">Comma-separated, e.g.: Moscow, Kazan</string>
+    <string name="education_level">Education Level</string>
+    <string name="education_specialty">Major</string>
+    <string name="education_institution">Institution</string>
+    <string name="education_specialty_hint">Start typing — the list will filter by level</string>
+    <string name="add_education_entry">Add another education</string>
+    <string name="programming_languages_hint">E.g.: Kotlin, Python, Go</string>
+    <string name="tech_stack_hint">E.g.: Kotlin, Compose, Room</string>
+    <string name="ai_improve">✨ Improve</string>
+    <string name="ai_generate">✨ Generate</string>
+    <string name="ai_busy">AI is writing…</string>
+    <string name="vacancy_match_title">Match with Job Posting</string>
+    <string name="vacancy_match_hint">Paste the job posting text…</string>
+    <string name="vacancy_match_run">Match</string>
+    <string name="vacancy_match_score">Match Score</string>
+    <string name="vacancy_match_matched">Matched</string>
+    <string name="vacancy_match_missing">Missing</string>
+    <string name="social_links">Social Media and Profiles</string>
+    <string name="social_link_platform">Platform</string>
+    <string name="social_link_url">Link or Username</string>
+    <string name="social_link_hint">E.g.: @username or https://…</string>
+    <string name="add_social_link">Add Link</string>
+    <string name="achievements">Achievement</string>
+    <string name="prof_achievements">Professional Achievement</string>
+    <string name="projects">Projects</string>
+    <string name="project">Project</string>
+    <string name="project_name">Project Name</string>
+    <string name="project_role">Role in Project</string>
+    <string name="project_duration">Duration</string>
+    <string name="project_description">Project Description</string>
+    <string name="project_team_size">Team Size</string>
+    <string name="project_duration_hint">e.g. 2023 — 2025 or 8 months</string>
+    <string name="project_tasks_hint">One task or achievement per line — each becomes a bullet in the document</string>
+    <string name="project_link">Project link</string>
+    <string name="project_link_hint">https://github.com/…, demo or publication</string>
+    <string name="projects_empty_hint">Add 2–4 key projects: name, role, tech stack and a measurable outcome</string>
+
+    <!-- Extended filling tips (the "?" button next to a field): intro + string-array of advice -->
+    <string name="tips_eyebrow">Filling tips</string>
+    <string name="tips_icon_description">Open filling tips</string>
+    <string name="tips_position_intro">The job title is the first thing a recruiter sees. Phrase it the way it appears in the vacancies you plan to apply for.</string>
+    <string-array name="tips_position">
+        <item>Use market-standard titles: Android Developer, not Programmer or an internal job code.</item>
+        <item>One headline, one specialization; add a related direction after a comma: Data Analyst, BI.</item>
+        <item>State your level when confident about it: Middle+, Senior — without inflating it.</item>
+        <item>Avoid words like Trainee or Generalist: they undervalue even a strong candidate.</item>
+        <item>Compare your wording with the titles of 3–5 relevant dream vacancies — it should match.</item>
+    </string-array>
+    <string name="tips_experience_intro">Total experience is the number of full years worked in the profession, including related roles.</string>
+    <string-array name="tips_experience">
+        <item>Count years cumulatively: freelancing and side jobs count too if they were in your specialty.</item>
+        <item>Specialty-specific experience can be lower than total experience — that is normal.</item>
+        <item>With under a year of experience, enter 0: honesty beats inflation, and projects will show your skills.</item>
+        <item>Do not round 11 months up to two years — this is easy to check at an interview.</item>
+    </string-array>
+    <string name="tips_about_intro">About me is a short 3–5 sentence pitch: who you are, your strengths and the value you bring to a company.</string>
+    <string-array name="tips_about">
+        <item>Formula: specialization + years of experience + key technology or domain + one main achievement.</item>
+        <item>Write about the benefit to the employer, not about your life goals.</item>
+        <item>Add 1–2 measurable facts: launched an app into the top 10, cut build time by 40 percent.</item>
+        <item>Do not duplicate your whole skills list — there is a separate section for that.</item>
+        <item>Avoid clichés: everyone writes team player and stress-resistant.</item>
+    </string-array>
+    <string name="tips_salary_intro">A salary range speeds up matching: recruiters immediately see whether the budget fits.</string>
+    <string-array name="tips_salary">
+        <item>Always give a lower bound — offers below it will not be considered.</item>
+        <item>Benchmark against median pay for your role and city, not against your previous salary.</item>
+        <item>Set the upper bound 15–20 percent above your expected minimum to leave room for negotiation.</item>
+        <item>State amounts gross (before tax) unless noted otherwise.</item>
+    </string-array>
+    <string name="tips_hard_skills_intro">List only technologies you actually know: every second one will come up at the interview.</string>
+    <string-array name="tips_hard_skills">
+        <item>Start with what matters most for the target vacancy; order matters.</item>
+        <item>Use concrete names and versions where relevant: Kotlin, PostgreSQL, Docker.</item>
+        <item>Skip technologies added just in case: extra lines blur the profile and invite tough questions.</item>
+        <item>Check the stacks of 3–5 dream vacancies and honestly cover as many lines as you can.</item>
+    </string-array>
+    <string name="tips_certifications_intro">Certificates officially confirm your skills — especially valuable with little commercial experience.</string>
+    <string-array name="tips_certifications">
+        <item>Format: certificate name, organization, year. Example: Google Cloud Architect, Google, 2024.</item>
+        <item>Put fresh and relevant ones first; outdated certificates can be omitted.</item>
+        <item>Include online courses only if they ended with an exam or a final project.</item>
+        <item>A verification link (Credential ID) increases trust.</item>
+    </string-array>
+    <string name="tips_achievements_intro">Achievements are the section recruiters value most: they show results, not duties.</string>
+    <string-array name="tips_achievements">
+        <item>Formula: verb + what you did + measurable outcome. Optimized queries — reports run 3 times faster.</item>
+        <item>Numbers win: money, time saved, percentages, team size, number of users.</item>
+        <item>Pick examples from the last 2–3 years, one strong fact per line.</item>
+        <item>Turn a weak achievement into a number rather than deleting it: even trained two interns counts.</item>
+    </string-array>
+    <string name="tips_soft_skills_intro">Soft skills must be backed by facts elsewhere in the resume — keep the list consistent with them.</string>
+    <string-array name="tips_soft_skills">
+        <item>Choose 4–6 skills that fit the vacancy: communication for client roles, rigor for process roles.</item>
+        <item>Every skill should have supporting evidence in the resume: leadership → led a project team.</item>
+        <item>Do not list opposites together: analytical mindset next to creative chaos looks contradictory.</item>
+        <item>Keep generic stress resistance only if you can prove it with an example.</item>
+    </string-array>
+    <string name="tips_project_description_intro">The description is 2–4 sentences about what the product is and the role you played.</string>
+    <string-array name="tips_project_description">
+        <item>Structure: what the product is → scale (users, market) → your area of responsibility.</item>
+        <item>Explain in plain words: the recruiter may be non-technical.</item>
+        <item>Pet projects are welcome when they carry real value and a code link.</item>
+        <item>Do not copy the README — rewrite it from your own perspective.</item>
+    </string-array>
+    <string name="tips_project_tasks_intro">Tasks are concrete bullets of what you did; each becomes a separate bullet in the PDF.</string>
+    <string-array name="tips_project_tasks">
+        <item>Start every point with an action verb: built, implemented, automated.</item>
+        <item>One task per line; split big workstreams into 2–3 items.</item>
+        <item>Add numbers to at least half of the points: time, volume, metric growth.</item>
+        <item>Drop routine work without outcomes — 3–5 strong points beat ten vague ones.</item>
+    </string-array>
+    <string name="tips_education_intro">List education starting from the highest level; add courses as separate entries.</string>
+    <string-array name="tips_education">
+        <item>Write the specialty as in your diploma but in plain language: Software Engineering.</item>
+        <item>For incomplete education, state the expected graduation year.</item>
+        <item>Early-career applicants should lean on education: add key courses and GPA if it is strong.</item>
+        <item>Seasoned specialists usually need just one latest relevant entry.</item>
+    </string-array>
+    <string name="tips_language_levels_intro">Use the international CEFR scale for language levels — both HR and automatic filters understand it.</string>
+    <string-array name="tips_language_levels">
+        <item>A1–A2 — basic: simple phrases and reading with a dictionary.</item>
+        <item>B1–B2 — confident: correspondence, calls and work meetings.</item>
+        <item>C1–C2 — fluent: negotiations, presentations, documents.</item>
+        <item>Be honest about English: an inflated level shows at the first technical interview.</item>
+    </string-array>
+    <string name="tips_social_links_intro">Profiles should work for you: recruiters follow 1–2 links, so make them count.</string>
+    <string-array name="tips_social_links">
+        <item>Must-have: GitHub or a portfolio for tech roles, LinkedIn/hh for everything else.</item>
+        <item>Polish profiles before applying: pinned repositories, photo, filled description.</item>
+        <item>Telegram is more convenient than a phone for quick contact — give your username.</item>
+        <item>Limit yourself to 3–4 links: more looks like noise.</item>
+    </string-array>
+    <string name="doc_link_fmt">Link: %1$s</string>
+    <string name="csv_col_project_links">Projects: links</string>
+    <string name="project_industry">Industry</string>
+    <string name="project_technologies">Technologies</string>
+    <string name="main_tasks">Main Tasks</string>
+    <string name="project_achievements">Project Achievements</string>
+    <string name="summary">Summary</string>
+    <string name="save">Save</string>
+    <string name="retry">Retry</string>
+    <string name="required_field">This field is required</string>
+    <string name="required_field_all">Fill in all required fields</string>
+    <string name="empty_resume_list">No resumes yet. Create your first one!</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="share">Share</string>
+    <string name="download">Download</string>
+    <string name="open">Open</string>
+    <string name="analyze">Analyze</string>
+    <string name="apply_suggestions">Apply suggestions</string>
+    <string name="error_loading">Failed to load resume</string>
+    <string name="error_saving">Failed to save resume</string>
+    <string name="error_deleting">Failed to delete resume</string>
+    <string name="error_analyzing">Failed to analyze resume</string>
+    <string name="error_generating_pdf">PDF generation error</string>
+    <string name="error_invalid_email">Please enter a valid email address</string>
+    <string name="error_invalid_phone">Please enter a valid phone number</string>
+    <string name="phone_format_hint">Format: 88005553535</string>
+    <string name="share_pdf">Share</string>
+    <string name="download_pdf">Download PDF</string>
+    <string name="analyze_pdf">Analyze PDF</string>
+    <string name="generating_pdf">Generating PDF…</string>
+    <string name="delete">Delete</string>
+    <string name="delete_confirm">DELETE</string>
+    <string name="cancel_action">CANCEL</string>
+    <string name="trash_restore">Restore</string>
+    <string name="trash_empty_all">Clear</string>
+    <string name="trash_empty_title">Trash is empty</string>
+    <string name="trash_empty_hint">Deleted resumes end up here — you can restore them anytime</string>
+    <string name="trash_delete_forever_title">Delete forever?</string>
+    <string name="trash_delete_forever_message">The resume will be permanently deleted.</string>
+    <string name="trash_empty_confirm_title">Empty the trash?</string>
+    <string name="trash_empty_confirm_message">All resumes in Trash will be permanently deleted. This action cannot be undone.</string>
+    <string name="preview">Preview</string>
+    <string name="resume_analysis">Resume Analysis</string>
+    <string name="the_analysis_is_completed">Analysis complete. Tap "Analyze" to run it again.</string>
+    <string name="template_test">Test</string>
+    <string name="create_prof_resume">Create professional resumes with AI</string>
+    <string name="logout_title">Sign Out</string>
+    <string name="logout_message">Are you sure you want to sign out?</string>
+    <string name="logout_confirm">SIGN OUT</string>
+    <string name="logout_cancel">CANCEL</string>
+    <string name="phone_auth_title">Sign In with Phone Number</string>
+    <string name="enter_phone_number">Enter your phone number</string>
+    <string name="phone_number_hint">+7 (999) 123-45-67</string>
+    <string name="send_verification_code">Send Code</string>
+    <string name="enter_verification_code">Enter verification code</string>
+    <string name="verification_code_hint">123456</string>
+    <string name="verify_code">Verify code</string>
+    <string name="resend_code">Resend Code</string>
+    <string name="verification_code_sent">Verification code sent to %s</string>
+    <string name="google_sign_in">Sign in with Google</string>
+    <string name="sign_in_with_email">Sign in with Email</string>
+    <string name="sign_in_with_phone">Sign in with Phone</string>
+    <string name="or_divider">or</string>
+    <string name="choose_auth_method">Choose sign-in method</string>
+    <string name="back_to_auth_methods">Back to sign-in methods</string>
+    <string name="error_invalid_phone_format">Invalid phone number format</string>
+    <string name="error_verification_code_invalid">Invalid verification code</string>
+    <string name="error_verification_code_expired">Verification code expired</string>
+    <string name="error_phone_auth_failed">Phone authentication error</string>
+    <string name="error_google_sign_in_failed">Google sign-in error</string>
+    <string name="error_google_sign_in_cancelled">Google sign-in cancelled</string>
+    <string name="error_google_account_not_found">Google account not found</string>
+    <string name="clear_all_filters">Reset All</string>
+    <string name="choose_template_style">Choose a template style</string>
+    <string name="template_modern">Modern</string>
+    <string name="template_creative">Creative</string>
+    <string name="template_minimalist">Minimalist</string>
+    <string name="template_professional">Professional</string>
+    <string name="template_sidebar">Sidebar</string>
+    <string name="accent_color_title">Accent Color</string>
+    <string name="accent_color_default">Template Default</string>
+    <string name="section_order_title">Section Order</string>
+    <string name="section_summary">Summary</string>
+    <string name="section_about">About Me</string>
+    <string name="section_education">Education</string>
+    <string name="section_languages">Languages</string>
+    <string name="section_skills">Skills</string>
+    <string name="section_achievements">Achievements</string>
+    <string name="section_projects">Projects</string>
+    <string name="section_order_hint">In the "Sidebar" template, languages and skills always stay in the sidebar</string>
+    <string name="previews_loading">Rendering preview…</string>
+    <string name="preview_page_x_of_y">Page %1$d of %2$d</string>
+    <string name="preview_prev_page">Previous page</string>
+    <string name="preview_next_page">Next page</string>
+    <string name="export_section_title">Export</string>
+    <string name="export_docx">DOCX</string>
+    <string name="export_csv">CSV</string>
+    <string name="export_print">Print</string>
+    <string name="export_pdf">PDF</string>
+    <string name="export_hint">DOCX — editable format, CSV — spreadsheet, PDF — printing and sharing</string>
+    <string name="settings_section_data">Data</string>
+    <string name="settings_backup_export">Create Backup (JSON)</string>
+    <string name="settings_backup_import">Restore from Backup</string>
+    <string name="settings_backup_hint">The backup is saved to Downloads and contains all resumes along with photos</string>
+    <string name="settings_export_all_csv">Export All Resumes to CSV</string>
+    <string name="settings_section_security">Security</string>
+    <string name="settings_biometric_title">Biometric Lock</string>
+    <!-- UX polish: undo, card menu, analysis stages, PDF appearance -->
+    <string name="moved_to_trash">Moved to trash</string>
+    <string name="action_undo">Undo</string>
+    <string name="card_more_actions">More actions</string>
+    <string name="card_share_pdf">Share PDF</string>
+    <string name="empty_resume_hint">Start from scratch or import an existing PDF — the fields fill themselves</string>
+    <string name="analysis_stage_1">Reading the resume…</string>
+    <string name="analysis_stage_2">Comparing against market requirements…</string>
+    <string name="analysis_stage_3">Finding strengths and gaps…</string>
+    <string name="analysis_stage_4">Writing recommendations…</string>
+    <string name="form_errors_tap_hint">Tap to open the tab with missing fields</string>
+    <string name="style_settings_button">Appearance</string>
+    <string name="translate_dialog_hint_fmt">A copy “%1$s” will be created; the original stays unchanged.</string>
+    <string name="cd_move_up">Move up</string>
+    <string name="cd_move_down">Move down</string>
+
+    <string name="settings_biometric_hint">Require fingerprint or face when opening the app</string>
+    <string name="settings_pdf_embed_title">Embed resume data into PDF</string>
+    <string name="settings_pdf_embed_hint">A hidden layer for re-importing the file back into this app. Keep it off when sending resumes to recruiters: otherwise salary and AI analysis are invisibly duplicated inside the file.</string>
+    <string name="biometric_locked_title">StaffAI is locked</string>
+    <string name="biometric_locked_subtitle">Verify your identity to open your resumes</string>
+    <string name="biometric_unlock">Unlock</string>
+    <string name="analysis_loading">Analyzing resume…</string>
+    <string name="analysis_loading_hint">This may take a few seconds</string>
+    <string name="analysis_error_title">Analysis Error</string>
+    <string name="analysis_completeness">Completeness Analysis</string>
+    <string name="analysis_structure">Structure Analysis</string>
+    <string name="analysis_strengths">Strengths</string>
+    <string name="analysis_improvements">Areas for Improvement</string>
+    <string name="analysis_recommendations">Recommendations</string>
+    <string name="analysis_additional_params">Additional Parameters</string>
+    <string name="analysis_completed">Analysis of resume #%1$s complete</string>
+    <string name="analysis_overall_rating">Overall Rating</string>
+    <string name="analysis_completeness_detail">· completeness %1$d%%</string>
+    <string name="analysis_resume_completeness">Resume Completeness</string>
+    <string name="analysis_strengths_label">Strengths</string>
+    <string name="analysis_improvements_label">Improvements</string>
+    <string name="analysis_recommendations_label">Recommendations</string>
+    <string name="analysis_collapse">Collapse</string>
+    <string name="analysis_expand">Expand</string>
+    <string name="analysis_empty_title">Analysis contains no data</string>
+    <string name="analysis_empty_hint">Try analyzing the resume again or check its contents</string>
+    <string name="analysis_retry">Retry Analysis</string>
+    <string name="dashboard_resumes_count">RESUMES · %1$d</string>
+    <string name="dashboard_compare_select">Compare: select 2</string>
+    <string name="dashboard_compare">Compare</string>
+    <string name="dashboard_no_resumes">No resumes found</string>
+    <string name="dashboard_compare_close">Close</string>
+    <string name="dashboard_compare_title">Candidate Comparison</string>
+    <string name="dashboard_col_position">Position</string>
+    <string name="dashboard_col_experience">Experience (years)</string>
+    <string name="dashboard_col_salary">Salary</string>
+    <string name="dashboard_col_city">City</string>
+    <string name="dashboard_col_relocation">Relocation</string>
+    <string name="dashboard_col_languages">Languages</string>
+    <string name="dashboard_col_technologies">Technologies</string>
+    <string name="dashboard_col_projects">Projects</string>
+    <string name="dashboard_col_status">Status</string>
+    <string name="dashboard_search_hint">Name or specialization</string>
+    <string name="filter_work_experience">WORK EXPERIENCE</string>
+    <string name="filter_junior">Junior (&lt; 3 years)</string>
+    <string name="filter_middle">Middle (3-5 years)</string>
+    <string name="filter_senior">Senior (&gt; 5 years)</string>
+    <string name="filter_conditions">CONDITIONS</string>
+    <string name="filter_favorites_only">Favorites only</string>
+    <string name="filter_ready_to_relocate">Ready to relocate</string>
+    <string name="filter_status_group">STATUS</string>
+    <string name="filter_salary_from_label">SALARY FROM (₽)</string>
+    <string name="filter_any">Any</string>
+    <string name="filter_reset">Reset</string>
+    <string name="filter_apply">Apply</string>
+    <string name="filter_apply_count">Apply · %1$d</string>
+    <string name="card_remove_favorite">Remove from Favorites</string>
+    <string name="card_add_favorite">Add to Favorites</string>
+    <string name="card_duplicate">Duplicate</string>
+    <string name="card_technologies_count">Technologies: %1$d</string>
+    <string name="card_salary_from_val">from %1$s₽</string>
+    <string name="card_salary_to_val">to %1$s₽</string>
+    <string name="card_relocation_short">relocation</string>
+    <string name="card_status_none">Status: none</string>
+    <string name="card_experience_val">Experience: %1$s</string>
+    <string name="preview_fallback_title">Resume</string>
+    <string name="preview_ai_analysis">AI Analysis</string>
+    <string name="untitled">Untitled</string>
+    <string name="trash_restored">"%1$s" restored</string>
+    <string name="trash_deleted_date">Deleted %1$s</string>
+    <string name="validation_full_name">Enter your full name</string>
+    <string name="validation_specialization">Enter your desired position</string>
+    <string name="validation_total_experience">Enter your total experience</string>
+    <string name="validation_experience_number">Experience must be a number (years)</string>
+    <string name="validation_email_invalid">Invalid email</string>
+    <string name="validation_phone_short">Phone number is too short</string>
+    <string name="validation_salary_from_required">Enter the "from" salary</string>
+    <string name="validation_salary_number">Enter a number (amount in rubles)</string>
+    <string name="validation_social_link_invalid">Invalid link or @username</string>
+    <string name="validation_salary_range">"To" cannot be less than "from"</string>
+    <string name="form_progress_description">Form completion progress: %1$d percent</string>
+    <string name="form_save_resume">Save Resume</string>
+    <string name="form_remove_tag">Remove %1$s</string>
+    <string name="form_education_level_selection">Education level selection</string>
+    <string name="form_hide_suggestions">Hide Suggestions</string>
+    <string name="form_show_suggestions">Show Suggestions</string>
+    <string name="form_autocomplete_field">%1$s, autocomplete field</string>
+    <string name="error_vacancy_match_failed">Job matching failed</string>
+    <string name="error_vacancy_match">Failed to match</string>
+    <string name="error_resume_not_found">Resume not found</string>
+    <string name="error_loading_resume_fmt">Failed to load resume: %1$s</string>
+    <string name="error_unexpected_analysis">Unexpected error during analysis</string>
+    <string name="error_analysis_failed">Analysis failed</string>
+    <string name="error_unknown">Unknown error</string>
+    <string name="error_unexpected_fmt">Unexpected error: %1$s</string>
+    <string name="error_improve_failed">Failed to improve text</string>
+    <string name="error_generate_failed">Failed to generate text</string>
+    <string name="error_pdf_still_generating">Please wait, PDF is still generating</string>
+    <string name="share_resume_chooser">Share Resume</string>
+    <string name="error_pdf_not_found">PDF file not found</string>
+    <string name="error_save_pdf_fmt">Failed to save PDF: %1$s</string>
+    <string name="error_share_pdf_fmt">Failed to share PDF: %1$s</string>
+    <string name="success_docx_saved">DOCX saved: %1$s</string>
+    <string name="error_create_docx">Failed to create DOCX</string>
+    <string name="error_create_docx_fmt">Failed to create DOCX: %1$s</string>
+    <string name="success_csv_saved">CSV saved: %1$s</string>
+    <string name="error_create_csv">Failed to create CSV</string>
+    <string name="error_create_csv_fmt">Failed to create CSV: %1$s</string>
+    <string name="error_create_downloads">Failed to create file in Downloads</string>
+    <string name="error_open_for_writing">Failed to open file for writing</string>
+    <string name="error_no_resume_for_analysis">No resume to analyze</string>
+    <string name="error_analyze_fmt">Failed to analyze resume: %1$s</string>
+    <string name="error_import_failed">Failed to import resume</string>
+    <string name="error_delete_fmt">Failed to delete resume: %1$s</string>
+    <string name="error_photo_save_fmt">Failed to save photo: %1$s</string>
+    <string name="backup_saved">Backup saved to Downloads: %1$s</string>
+    <string name="backup_create_failed">Failed to create backup</string>
+    <string name="backup_create_failed_fmt">Failed to create backup: %1$s</string>
+    <string name="backup_open_failed">Failed to open backup file</string>
+    <string name="backup_restore_count">Resumes restored: %1$d</string>
+    <string name="backup_restore_failed">Failed to restore backup</string>
+    <string name="backup_restore_failed_fmt">Failed to restore: %1$s</string>
+    <string name="csv_export_saved">CSV saved to Downloads: %1$s</string>
+    <string name="csv_export_failed">Failed to export CSV</string>
+    <string name="csv_export_failed_fmt">Failed to create CSV: %1$s</string>
+    <string name="biometric_not_configured">Biometrics aren\'t set up on this device (add a fingerprint or face in system settings)</string>
+    <string name="biometric_lock_on">Lock enabled</string>
+    <string name="biometric_lock_off">Lock disabled</string>
+    <string name="trash_load_error">Failed to load trash</string>
+    <string name="trash_load_error_fmt">Failed to load trash: %1$s</string>
+    <string name="trash_restore_error">Failed to restore resume</string>
+    <string name="trash_restore_error_fmt">Failed to restore resume: %1$s</string>
+    <string name="trash_delete_error">Failed to delete resume</string>
+    <string name="trash_delete_error_fmt">Failed to delete resume: %1$s</string>
+    <string name="trash_empty_error">Failed to empty trash</string>
+    <string name="trash_empty_error_fmt">Failed to empty trash: %1$s</string>
+    <string name="resume_name_not_specified">Name not specified</string>
+    <string name="doc_prof_resume">Professional Resume</string>
+    <string name="doc_key_achievements">Key Achievements</string>
+    <string name="doc_project_experience">Project Experience</string>
+    <string name="doc_technical_skills">Technical Skills</string>
+    <string name="doc_certifications_fmt">Certifications: %1$s</string>
+    <string name="doc_soft_skills_fmt">Soft skills: %1$s</string>
+    <string name="doc_project_fmt">Project %1$d: %2$s</string>
+    <string name="doc_role_fmt">Role: %1$s</string>
+    <string name="doc_duration_fmt">Duration: %1$s</string>
+    <string name="doc_team_fmt">Team: %1$s</string>
+    <string name="doc_tech_fmt">Technologies: %1$s</string>
+    <string name="doc_experience_fmt">Experience: %1$s</string>
+    <string name="doc_spec_experience_fmt">Specialized experience: %1$s</string>
+    <string name="doc_salary_line_full">Desired salary: %1$s to %2$s RUB/month</string>
+    <string name="doc_salary_line_from">Desired salary: from %1$s RUB/month</string>
+    <string name="doc_salary_line_to">Desired salary: up to %1$s RUB/month</string>
+    <string name="doc_relocation_line">Relocation: %1$s</string>
+    <string name="doc_cities_suffix"> · cities: %1$s</string>
+    <string name="doc_employment_line">Employment: %1$s</string>
+    <string name="doc_schedule_line">Schedule: %1$s</string>
+    <string name="pdf_page_footer_fmt">%1$s • %2$s • p. </string>
+    <string name="pdf_certifications">Certifications</string>
+    <string name="pdf_soft_skills">Soft Skills</string>
+    <string name="duplicate_suffix"> (copy)</string>
+    <string name="status_none">No status</string>
+    <string name="status_screening">Screening</string>
+    <string name="status_interview">Interview</string>
+    <string name="status_offer">Offer</string>
+    <string name="status_rejected">Rejected</string>
+    <string name="sort_by_modified">By last modified</string>
+    <string name="sort_by_salary">By salary</string>
+    <string name="sort_by_experience">By experience</string>
+    <string name="sort_by_name">By name</string>
+    <string name="sort_ascending">Ascending ↑</string>
+    <string name="sort_descending">Descending ↓</string>
+    <string name="filter_salary_k_fmt">%1$dk+</string>
+    <string name="cd_add_resume">Add new resume</string>
+    <string name="cd_import_pdf">Import PDF</string>
+    <string name="cd_edit_resume">Edit resume</string>
+    <string name="cd_rating">Rating</string>
+    <string name="error_generic">Error</string>
+    <string name="no_data">No data</string>
+    <string name="action_ok">OK</string>
+    <string name="biometric_cancel">Cancel</string>
+    <string name="cover_letter_title">Cover Letter</string>
+    <string name="cover_letter_vacancy_label">Job description</string>
+    <string name="cover_letter_vacancy_hint">Paste the key job requirements…</string>
+    <string name="cover_letter_generate">✨ Generate letter</string>
+    <string name="cover_letter_generating">Writing the letter…</string>
+    <string name="cover_letter_content_label">Letter text</string>
+    <string name="cover_letter_empty_hint">Generate a letter tailored to a specific job — edit the text and save it. Saved letters will appear below.</string>
+    <string name="cover_letter_saved_list">Saved letters</string>
+    <string name="cover_letter_saved">Letter saved</string>
+    <string name="cover_letter_need_vacancy">Add the job text first</string>
+    <string name="cover_letter_generate_failed_fmt">Failed to generate the letter: %1$s</string>
+    <string name="cover_letter_delete_confirm_title">Delete letter?</string>
+    <string name="cover_letter_delete_confirm_message">The letter will be deleted permanently.</string>
+    <string name="translate_action">Translate</string>
+    <string name="translate_dialog_title">Translation language</string>
+    <string name="translate_to_en">To English</string>
+    <string name="translate_to_ru">To Russian</string>
+    <string name="translate_running">Translating the resume…</string>
+    <string name="translate_done_fmt">Translation created: %1$s</string>
+    <string name="error_translate_fmt">Failed to translate the resume: %1$s</string>
+    <string name="version_suffix_en"> · EN</string>
+    <string name="version_suffix_ru"> · RU</string>
+    <string name="analysis_rating_scale">/ 5.0</string>
+    <string name="splash_logo_letter">S</string>
+    <string name="settings_api_key_placeholder">sk-…</string>
+    <string name="error_pdf_generate_fmt">Failed to generate PDF: %1$s</string>
+    <string name="edu_level_svo">Secondary vocational</string>
+    <string name="edu_level_bachelor">Higher education (Bachelor’s)</string>
+    <string name="edu_level_specialist">Higher education (Specialist)</string>
+    <string name="edu_level_master">Higher education (Master’s)</string>
+    <string name="edu_level_postgraduate">Postgraduate</string>
+    <string name="edu_level_additional">Additional</string>
+    <string name="reloc_not_ready">Not ready to relocate</string>
+    <string name="reloc_ready">Ready to relocate</string>
+    <string name="reloc_conditional">Ready under certain conditions</string>
+    <string name="mock_completeness_fmt">The resume is %1$d%% complete: all key sections are present — personal details, skills and experience. Text length is %2$d characters. The structure reads well, but some sections could be expanded to showcase qualifications more fully.</string>
+    <string name="mock_logic">The narrative is generally consistent: sections do not contradict each other and the experience matches the declared tech stack. Generic wording without measurable results makes it hard to assess real contributions to projects.</string>
+    <string name="mock_param_tech_relevance">Technology relevance</string>
+    <string name="mock_param_specialization_match">Specialization match</string>
+    <string name="mock_param_project_quality">Project description quality</string>
+    <string name="mock_param_structure_logic">Structure logic</string>
+    <string name="mock_param_achievement_specificity">Specificity of achievements</string>
+    <string name="mock_value_high">high</string>
+    <string name="mock_value_strong">strong</string>
+    <string name="mock_value_moderate">moderate</string>
+    <string name="mock_value_needs_improvement">needs improvement</string>
+    <string name="social_ph_vk">https://vk.com/your_id</string>
+    <string name="social_ph_telegram">https://t.me/your_username</string>
+    <string name="social_ph_github">https://github.com/your_login</string>
+    <string name="social_ph_gitlab">https://gitlab.com/your_login</string>
+    <string name="social_ph_linkedin">https://linkedin.com/in/your_username</string>
+    <string name="social_ph_habr">https://career.habr.com/your_username</string>
+    <string name="social_ph_behance">https://behance.net/your_username</string>
+    <string name="social_ph_dribbble">https://dribbble.com/your_username</string>
+    <string name="social_ph_youtube">https://youtube.com/@your_channel</string>
+    <string name="social_ph_site">https://your-site.com</string>
+    <string name="social_ph_generic">https://… or @username</string>
+    <string name="csv_col_full_name">Full name</string>
+    <string name="csv_col_position">Position</string>
+    <string name="csv_col_total_experience">Total experience (years)</string>
+    <string name="csv_col_spec_experience">Specialized experience (years)</string>
+    <string name="csv_col_email">Email</string>
+    <string name="csv_col_phone">Phone</string>
+    <string name="csv_col_city">City</string>
+    <string name="csv_col_salary_from">Salary from</string>
+    <string name="csv_col_salary_to">Salary to</string>
+    <string name="csv_col_relocation">Relocation</string>
+    <string name="csv_col_relocation_cities">Relocation cities</string>
+    <string name="csv_col_employment">Employment</string>
+    <string name="csv_col_schedule">Schedule</string>
+    <string name="csv_col_education">Education</string>
+    <string name="csv_col_languages">Languages</string>
+    <string name="csv_col_os">OS</string>
+    <string name="csv_col_prog_langs">Programming languages</string>
+    <string name="csv_col_frameworks">Frameworks</string>
+    <string name="csv_col_libraries">Libraries</string>
+    <string name="csv_col_databases">Databases</string>
+    <string name="csv_col_other_tech">Other technologies</string>
+    <string name="csv_col_certifications">Certifications</string>
+    <string name="csv_col_soft_skills">Soft skills</string>
+    <string name="csv_col_achievements">Achievements</string>
+    <string name="csv_col_projects">Projects</string>
+    <string name="csv_col_about">About</string>
+    <string name="csv_col_status">Status</string>
+    <string name="csv_col_favorite">Favorite</string>
+    <string name="csv_col_modified">Modified</string>
+    <string name="csv_yes">yes</string>
+    <string name="csv_no">no</string>
+    <string name="help_intro">Frequently asked questions. Didn’t find an answer? Write to us.</string>
+    <string name="help_q1">How do I create a resume?</string>
+    <string name="help_a1">Tap the “+” button on the main screen and fill in the form sections — personal details, education, languages, skills and projects. The draft is saved automatically, and the “Save” button creates the final resume.</string>
+    <string name="help_q2">Why do I need an API key?</string>
+    <string name="help_a2">An OpenRouter key unlocks the AI features: resume analysis, text improvement and generation. Get a free key at openrouter.ai and paste it in Settings — the key is stored only on your device.</string>
+    <string name="help_q3">How does AI analysis work?</string>
+    <string name="help_a3">Open a resume and tap “Analyze”: the model evaluates completeness, structure and strengths, then suggests concrete improvements. Without a configured key a demo analysis is available.</string>
+    <string name="help_q4">Where are exported files saved?</string>
+    <string name="help_a4">PDF, DOCX and CSV are available right from the preview: open, print or share them. When exporting “to downloads”, the file appears in the device’s Downloads folder.</string>
+    <string name="help_q5">Can I restore a deleted resume?</string>
+    <string name="help_a5">Yes. Deleted resumes go to the trash (Settings → Trash) where they can be restored. Emptying the trash removes them permanently.</string>
+    <string name="help_q6">How do I change the interface language?</string>
+    <string name="help_a6">Settings → App → Interface language. Russian and English are available; no app restart is required.</string>
+    <string name="about_description">StaffAI helps you build a professional resume quickly: a smart form with suggestions, PDF templates, DOCX and CSV export, plus AI analysis and text improvement. All data stays on your device.</string>
+    <string name="about_version_label">Version</string>
+    <string name="about_contact_title">Contact support</string>
+    <string name="about_contact_subject">StaffAI: in-app inquiry</string>
+    <string name="about_share_title">Share the app</string>
+    <string name="about_share_text">Check out StaffAI — an AI-powered professional resume builder</string>
+    <string name="privacy_intro_title">General</string>
+    <string name="privacy_intro_body">StaffAI respects your privacy. This policy explains what data the app processes and how it is protected. By using the app you agree to its terms.</string>
+    <string name="privacy_storage_title">Your data stays with you</string>
+    <string name="privacy_storage_body">Resumes, photos, settings and the API key are stored exclusively in device memory and in local backups that you create yourself. We never access this data and collect no usage statistics.</string>
+    <string name="privacy_llm_title">AI model processing</string>
+    <string name="privacy_llm_body">The analysis and text-improvement features send your resume content to the OpenRouter service for processing by a language model — only upon your explicit action and with your personal API key. If you don’t use the AI features, no data ever leaves the device.</string>
+    <string name="privacy_permissions_title">Permissions</string>
+    <string name="privacy_permissions_body">Photo access is requested only to add a profile picture of your choice. Biometric locking is performed by system tools: your fingerprint and face data never leave the device and are not accessible to the app.</string>
+    <string name="privacy_rights_title">Managing your data</string>
+    <string name="privacy_rights_body">You can edit or delete any resume at any time, restore it from trash or backup, disable biometric locking and export all data as a single file. To delete everything, uninstall the app together with its data in system settings.</string>
+    <string name="privacy_changes_title">Policy changes</string>
+    <string name="privacy_changes_body">We may update this policy periodically. The current version is always available on this screen, and significant changes are accompanied by an update of the date below.</string>
+    <string name="privacy_contact_title">Contacts</string>
+    <string name="privacy_contact_body">Questions about the privacy policy and data processing: %1$s</string>
+    <string name="privacy_effective_date">Last updated: August 24, 2026</string>
+
+    <!-- ==================== Массивы подсказок автодополнения ==================== -->
+    <string-array name="suggestion_cities">
+        <item>Moscow</item>
+        <item>St. Petersburg</item>
+        <item>Novosibirsk</item>
+        <item>Yekaterinburg</item>
+        <item>Kazan</item>
+        <item>Nizhny Novgorod</item>
+        <item>Chelyabinsk</item>
+        <item>Samara</item>
+        <item>Rostov-on-Don</item>
+        <item>Krasnodar</item>
+        <item>Voronezh</item>
+        <item>Perm</item>
+        <item>Volgograd</item>
+        <item>Ufa</item>
+        <item>Krasnoyarsk</item>
+        <item>Tyumen</item>
+        <item>Sochi</item>
+    </string-array>
+    <string-array name="suggestion_languages">
+        <item>Russian</item>
+        <item>English</item>
+        <item>German</item>
+        <item>French</item>
+        <item>Spanish</item>
+        <item>Italian</item>
+        <item>Chinese</item>
+        <item>Japanese</item>
+        <item>Korean</item>
+        <item>Turkish</item>
+        <item>Arabic</item>
+        <item>Portuguese</item>
+    </string-array>
+    <string-array name="suggestion_language_levels">
+        <item>A1 — Beginner</item>
+        <item>A2 — Elementary</item>
+        <item>B1 — Intermediate</item>
+        <item>B2 — Upper-intermediate</item>
+        <item>C1 — Advanced</item>
+        <item>C2 — Proficient</item>
+        <item>Native</item>
+    </string-array>
+    <string-array name="suggestion_positions">
+        <item>Junior Android Developer</item>
+        <item>Android Developer</item>
+        <item>Senior Android Developer</item>
+        <item>iOS Developer</item>
+        <item>Flutter Developer</item>
+        <item>Frontend Developer</item>
+        <item>Backend Developer</item>
+        <item>Java Developer</item>
+        <item>Kotlin Developer</item>
+        <item>Python Developer</item>
+        <item>Go Developer</item>
+        <item>Fullstack Developer</item>
+        <item>QA Engineer</item>
+        <item>Automation QA Engineer</item>
+        <item>DevOps Engineer</item>
+        <item>SRE Engineer</item>
+        <item>Data Scientist</item>
+        <item>Data Engineer</item>
+        <item>ML Engineer</item>
+        <item>Data Analyst</item>
+        <item>Systems Analyst</item>
+        <item>Business Analyst</item>
+        <item>Product Manager</item>
+        <item>Project Manager</item>
+        <item>Team Lead</item>
+        <item>Tech Lead</item>
+        <item>Software Architect</item>
+        <item>UX/UI Designer</item>
+        <item>Web Designer</item>
+        <item>1C Developer</item>
+    </string-array>
+    <string-array name="suggestion_soft_skills">
+        <item>Communication</item>
+        <item>Teamwork</item>
+        <item>Time management</item>
+        <item>Critical thinking</item>
+        <item>Problem solving</item>
+        <item>Adaptability</item>
+        <item>Mentorship</item>
+        <item>Public speaking</item>
+        <item>Negotiation</item>
+        <item>Conflict management</item>
+        <item>Empathy</item>
+        <item>Multitasking</item>
+    </string-array>
+    <string-array name="suggestion_employment">
+        <item>Full-time</item>
+        <item>Part-time</item>
+        <item>Side job</item>
+        <item>Internship</item>
+    </string-array>
+    <string-array name="suggestion_work_schedule">
+        <item>Remote work</item>
+        <item>Hybrid format</item>
+        <item>Office work</item>
+    </string-array>
+    <string-array name="suggestion_social_platforms">
+        <item>Telegram</item>
+        <item>LinkedIn</item>
+        <item>GitHub</item>
+        <item>GitLab</item>
+        <item>Habr Career</item>
+        <item>Behance</item>
+        <item>Dribbble</item>
+        <item>YouTube</item>
+        <item>VK</item>
+        <item>Personal website</item>
+    </string-array>
+    <string-array name="suggestion_specialties_svo">
+        <item>Information systems and programming</item>
+        <item>Computer systems and complexes</item>
+        <item>Network and system administration</item>
+        <item>Programming in computer systems</item>
+        <item>Multi-channel telecommunication systems</item>
+        <item>Maintenance and repair of radio-electronic equipment</item>
+        <item>Economics and accounting</item>
+        <item>Law and social security organization</item>
+        <item>Design (by industry)</item>
+        <item>Operational activities in logistics</item>
+    </string-array>
+    <string-array name="suggestion_specialties_bachelor">
+        <item>Software engineering</item>
+        <item>Informatics and computer engineering</item>
+        <item>Applied mathematics and informatics</item>
+        <item>Information security</item>
+        <item>Information systems and technologies</item>
+        <item>Business informatics</item>
+        <item>Applied informatics</item>
+        <item>Radio engineering</item>
+        <item>Economics</item>
+        <item>Management</item>
+        <item>Design</item>
+    </string-array>
+    <string-array name="suggestion_specialties_specialist">
+        <item>Applied mathematics and informatics</item>
+        <item>Comprehensive information security of automated systems</item>
+        <item>Software engineering</item>
+        <item>Informatics and computer engineering</item>
+        <item>Automated information processing and control systems</item>
+        <item>Computers, complexes, systems and networks</item>
+        <item>Economic security</item>
+        <item>General medicine</item>
+        <item>Jurisprudence</item>
+    </string-array>
+    <string-array name="suggestion_specialties_master">
+        <item>Software engineering</item>
+        <item>Applied mathematics and informatics</item>
+        <item>Information security</item>
+        <item>Intelligent data analysis</item>
+        <item>Artificial intelligence and machine learning</item>
+        <item>Software development management</item>
+        <item>Business informatics</item>
+    </string-array>
+    <string-array name="suggestion_specialties_postgraduate">
+        <item>Informatics and computer engineering</item>
+        <item>Mathematical modeling, numerical methods and software complexes</item>
+        <item>Theoretical foundations of computer science</item>
+        <item>Methods and systems of information protection</item>
+        <item>Economic theory</item>
+    </string-array>
+    <string-array name="suggestion_specialties_additional">
+        <item>Professional retraining</item>
+        <item>Advanced training</item>
+        <item>Data Science and data analytics</item>
+        <item>Software testing</item>
+        <item>DevOps engineering</item>
+        <item>Project management</item>
+    </string-array>
+
+    <!-- Списки мок-анализа (порядок элементов значим) -->
+    <string-array name="mock_strengths">
+        <item>Clear structure: all key resume sections are present</item>
+        <item>Relevant technology stack backed by projects</item>
+        <item>Experience listed in chronological order without gaps</item>
+        <item>Contacts and location provided — easy for employers to reach out</item>
+    </string-array>
+    <string-array name="mock_improvements">
+        <item>Add quantitative results to project descriptions</item>
+        <item>Describe your role in the team for recent projects</item>
+        <item>Specify proficiency levels for foreign languages</item>
+        <item>Expand the About me section with key achievements</item>
+    </string-array>
+    <string-array name="mock_recommendations">
+        <item>Rephrase 2–3 responsibilities as achievements using the scheme “action → result → metric”</item>
+        <item>Move your strongest technologies to the top of the skills block</item>
+        <item>Add links to your portfolio or repositories</item>
+        <item>Double-check consistency of date and title formatting</item>
+    </string-array>
+
+    <!-- Годы опыта -->
+    <plurals name="experience_years">
+        <item quantity="one">%1$d year</item>
+        <item quantity="other">%1$d years</item>
+    </plurals>
+</resources>

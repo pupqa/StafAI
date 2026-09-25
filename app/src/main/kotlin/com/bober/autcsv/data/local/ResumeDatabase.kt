@@ -6,19 +6,123 @@ import androidx.room.TypeConverters
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.bober.autcsv.data.local.converter.Converters
+import com.bober.autcsv.data.local.dao.CoverLetterDao
 import com.bober.autcsv.data.local.dao.ResumeDao
+import com.bober.autcsv.data.local.entity.CoverLetterEntity
 import com.bober.autcsv.data.local.entity.ResumeEntity
 
 @Database(
-    entities = [ResumeEntity::class],
-    version = 4,
+    entities = [ResumeEntity::class, CoverLetterEntity::class],
+    version = 9,
     exportSchema = true
 )
 @TypeConverters(Converters::class)
 abstract class ResumeDatabase : RoomDatabase() {
     abstract val resumeDao: ResumeDao
+    abstract val coverLetterDao: CoverLetterDao
 
     companion object {
+        /**
+         * Миграция с 8 на 9: отдельная таблица сопроводительных писем
+         * (LLM-генерация по вакансии, редактирование пользователем).
+         */
+        val MIGRATION_8_9 = object : Migration(8, 9) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL(
+                    """
+                    CREATE TABLE IF NOT EXISTS cover_letters (
+                        id TEXT PRIMARY KEY NOT NULL,
+                        resumeId TEXT NOT NULL,
+                        vacancyTitle TEXT NOT NULL,
+                        vacancyText TEXT NOT NULL,
+                        content TEXT NOT NULL,
+                        createdAt INTEGER NOT NULL,
+                        updatedAt INTEGER NOT NULL
+                    )
+                """.trimIndent()
+                )
+                database.execSQL(
+                    "CREATE INDEX IF NOT EXISTS index_cover_letters_resumeId " +
+                            "ON cover_letters(resumeId)"
+                )
+            }
+        }
+
+        /**
+         * Миграция с 7 на 8: несколько образований у одного резюме.
+         * Поле education сохраняется как текстовое представление для экспорта.
+         */
+        val MIGRATION_7_8 = object : Migration(7, 8) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL(
+                    "ALTER TABLE resumes ADD COLUMN educations TEXT NOT NULL DEFAULT '[]'"
+                )
+            }
+        }
+
+        /**
+         * Миграция с 6 на 7: желаемая занятость и график работы, фото
+         * кандидата, статус в пайплайне рекрутера и признак избранного.
+         */
+        val MIGRATION_6_7 = object : Migration(6, 7) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL(
+                    "ALTER TABLE resumes ADD COLUMN employment TEXT NOT NULL DEFAULT ''"
+                )
+                database.execSQL(
+                    "ALTER TABLE resumes ADD COLUMN workSchedule TEXT NOT NULL DEFAULT ''"
+                )
+                database.execSQL(
+                    "ALTER TABLE resumes ADD COLUMN photoUri TEXT NOT NULL DEFAULT ''"
+                )
+                database.execSQL(
+                    "ALTER TABLE resumes ADD COLUMN status TEXT NOT NULL DEFAULT 'NONE'"
+                )
+                database.execSQL(
+                    "ALTER TABLE resumes ADD COLUMN isFavorite INTEGER NOT NULL DEFAULT 0"
+                )
+            }
+        }
+
+        /**
+         * Миграция с 5 на 6: блок «Желаемая работа» — зарплатная вилка,
+         * готовность к релокации и города переезда, а также ссылки на соцсети.
+         */
+        val MIGRATION_5_6 = object : Migration(5, 6) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL(
+                    "ALTER TABLE resumes ADD COLUMN salaryMin TEXT NOT NULL DEFAULT ''"
+                )
+                database.execSQL(
+                    "ALTER TABLE resumes ADD COLUMN salaryMax TEXT NOT NULL DEFAULT ''"
+                )
+                database.execSQL(
+                    "ALTER TABLE resumes ADD COLUMN readyToRelocate TEXT NOT NULL DEFAULT ''"
+                )
+                database.execSQL(
+                    "ALTER TABLE resumes ADD COLUMN relocationCities TEXT NOT NULL DEFAULT ''"
+                )
+                database.execSQL(
+                    "ALTER TABLE resumes ADD COLUMN socialLinks TEXT NOT NULL DEFAULT '[]'"
+                )
+            }
+        }
+
+        /**
+         * Миграция с 4 на 5: добавление признака мягкого удаления (корзина)
+         * и отметки времени удаления.
+         */
+        val MIGRATION_4_5 = object : Migration(4, 5) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL(
+                    "ALTER TABLE resumes ADD COLUMN isDeleted INTEGER NOT NULL DEFAULT 0"
+                )
+                database.execSQL(
+                    "ALTER TABLE resumes ADD COLUMN deletedAt INTEGER NOT NULL DEFAULT 0"
+                )
+            }
+        }
+
         /**
          * Миграция с 3 на 4: добавление поля aboutMe и переименование achievements
          * в professionalAchievements с переносом данных.

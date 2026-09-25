@@ -1,0 +1,312 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 9,
+    "identityHash": "da3f53a2f797bfe32fba93f471ef4bfa",
+    "entities": [
+      {
+        "tableName": "resumes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `fullName` TEXT NOT NULL, `specialization` TEXT NOT NULL, `totalExperience` TEXT NOT NULL, `specializationExperience` TEXT NOT NULL, `education` TEXT NOT NULL, `educations` TEXT NOT NULL, `email` TEXT NOT NULL, `phone` TEXT NOT NULL, `location` TEXT NOT NULL, `aboutMe` TEXT NOT NULL, `salaryMin` TEXT NOT NULL, `salaryMax` TEXT NOT NULL, `readyToRelocate` TEXT NOT NULL, `relocationCities` TEXT NOT NULL, `socialLinks` TEXT NOT NULL, `employment` TEXT NOT NULL, `workSchedule` TEXT NOT NULL, `photoUri` TEXT NOT NULL, `status` TEXT NOT NULL, `isFavorite` INTEGER NOT NULL, `languages` TEXT NOT NULL, `operatingSystems` TEXT NOT NULL, `programmingLanguages` TEXT NOT NULL, `frameworks` TEXT NOT NULL, `libraries` TEXT NOT NULL, `databases` TEXT NOT NULL, `otherTechnologies` TEXT NOT NULL, `professionalAchievements` TEXT NOT NULL, `certifications` TEXT NOT NULL, `softSkills` TEXT NOT NULL, `projects` TEXT NOT NULL, `summary` TEXT NOT NULL, `lastModified` INTEGER NOT NULL, `aiAnalysis` TEXT NOT NULL, `isDeleted` INTEGER NOT NULL, `deletedAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fullName",
+            "columnName": "fullName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "specialization",
+            "columnName": "specialization",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalExperience",
+            "columnName": "totalExperience",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "specializationExperience",
+            "columnName": "specializationExperience",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "education",
+            "columnName": "education",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "educations",
+            "columnName": "educations",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "phone",
+            "columnName": "phone",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "location",
+            "columnName": "location",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aboutMe",
+            "columnName": "aboutMe",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "salaryMin",
+            "columnName": "salaryMin",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "salaryMax",
+            "columnName": "salaryMax",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "readyToRelocate",
+            "columnName": "readyToRelocate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "relocationCities",
+            "columnName": "relocationCities",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "socialLinks",
+            "columnName": "socialLinks",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "employment",
+            "columnName": "employment",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workSchedule",
+            "columnName": "workSchedule",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "photoUri",
+            "columnName": "photoUri",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isFavorite",
+            "columnName": "isFavorite",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "languages",
+            "columnName": "languages",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "operatingSystems",
+            "columnName": "operatingSystems",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "programmingLanguages",
+            "columnName": "programmingLanguages",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "frameworks",
+            "columnName": "frameworks",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "libraries",
+            "columnName": "libraries",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "databases",
+            "columnName": "databases",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "otherTechnologies",
+            "columnName": "otherTechnologies",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "professionalAchievements",
+            "columnName": "professionalAchievements",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "certifications",
+            "columnName": "certifications",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "softSkills",
+            "columnName": "softSkills",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "projects",
+            "columnName": "projects",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "summary",
+            "columnName": "summary",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastModified",
+            "columnName": "lastModified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aiAnalysis",
+            "columnName": "aiAnalysis",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isDeleted",
+            "columnName": "isDeleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deletedAt",
+            "columnName": "deletedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "cover_letters",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `resumeId` TEXT NOT NULL, `vacancyTitle` TEXT NOT NULL, `vacancyText` TEXT NOT NULL, `content` TEXT NOT NULL, `createdAt` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resumeId",
+            "columnName": "resumeId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vacancyTitle",
+            "columnName": "vacancyTitle",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vacancyText",
+            "columnName": "vacancyText",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "content",
+            "columnName": "content",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_cover_letters_resumeId",
+            "unique": false,
+            "columnNames": [
+              "resumeId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_cover_letters_resumeId` ON `${TABLE_NAME}` (`resumeId`)"
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'da3f53a2f797bfe32fba93f471ef4bfa')"
+    ]
+  }
+}

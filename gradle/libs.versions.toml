@@ -1,7 +1,10 @@
 [versions]
+biometric = "1.1.0"
+appcompat = "1.7.1"
 pdfboxAndroid = "2.0.27.0"
+securityCrypto = "1.1.0-alpha06"
 splashscreen = "1.0.1"
-agp = "8.12.0"
+agp = "9.0.0"
 desugar_jdk_libs = "2.1.5"
 kotlin = "2.2.10"
 coreKtx = "1.17.0"
@@ -21,24 +24,28 @@ pdfbox = "3.0.5"
 coroutines = "1.10.2"
 turbine = "1.0.0"
 mockk = "1.14.6"
-openai = "4.0.1"
-ktor = "3.3.1"
-ui = "1.9.3"
+ui = "1.12.0"
 
 kotlinxSerialization = "1.9.0"
+ksp = "2.3.2"
 googleServices = "4.4.2"
 googleAuth = "21.3.0"
 credentialsPlayServices = "1.5.0"
 credentialsManager = "1.0.0"
 
 [libraries]
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-biometric = { module = "androidx.biometric:biometric", version.ref = "biometric" }
+androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
 desugar_jdk_libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
@@ -76,8 +83,6 @@ androidx-compose-ui-test = { group = "androidx.compose.ui", name = "ui-test-juni
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
-openai = { group = "com.aallam.openai", name = "openai-client", version.ref = "openai" }
-ktor = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
 ui = { group = "androidx.compose.ui", name = "ui", version.ref = "ui" }
 
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
@@ -86,6 +91,7 @@ kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+com-google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 

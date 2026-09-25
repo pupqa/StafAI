@@ -18,11 +18,10 @@ import javax.inject.Singleton
 object LlmModule {
     @Provides
     @Singleton
-            /**
-             * Предоставляет реализацию [LlmRepository], основанную на OpenRouter API.
-             */
+
     fun provideLlmRepository(
         api: OpenRouterApi,
+        apiKeyStore: com.bober.autcsv.core.utils.ApiKeyStore,
         @Named("openrouter_api_key") apiKey: String,
-    ): LlmRepository = LlmRepositoryImpl(api, apiKey)
-} 
+    ): LlmRepository = LlmRepositoryImpl(api, apiKeyStore, apiKey)
+}

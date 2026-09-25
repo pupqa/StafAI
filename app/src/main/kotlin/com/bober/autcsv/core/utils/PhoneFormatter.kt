@@ -3,108 +3,36 @@ package com.bober.autcsv.core.utils
 object PhoneFormatter {
 
     /**
-     * Форматирует номер телефона в российском формате
-     * Примеры:
-     * "88005553535" -> "+8 (800) 555-35-35"
-     * "8800555353" -> "+8 (800) 555-35-3"
-     * "880055535" -> "+8 (800) 555-35"
-     * "88005553" -> "+8 (800) 555-3"
-     * "8800555" -> "+8 (800) 555"
-     * "880055" -> "+8 (800) 55"
-     * "88005" -> "+8 (800) 5"
-     * "8800" -> "+8 (800)"
-     * "880" -> "+8 (80"
-     * "88" -> "+8 (8"
-     * "8" -> "+8"
+     * Форматирует номер в российском формате +7 (XXX) XXX-XX-XX.
+     * Транк-префикс «8» нормализуется в код страны «7», иначе номер
+     * уезжает в документы с несуществующим кодом «+8»:
+     * «88005553535» -> «+7 (800) 555-35-35».
+     *
+     * Промежуточные состояния ввода форматируются по мере набора:
+     * «8» -> «+7», «880» -> «+7 (80…» и т.д.
      */
     fun formatPhoneNumber(input: String): String {
-        // Удаляем все нецифровые символы
-        val digitsOnly = input.filter { it.isDigit() }
+        val digits = input.filter { it.isDigit() }.normalizeRu().take(15)
+        if (digits.isEmpty()) return ""
 
-        val result = when {
-            digitsOnly.isEmpty() -> ""
-            digitsOnly.length == 1 -> "+$digitsOnly"
-            digitsOnly.length == 2 -> "+$digitsOnly"
-            digitsOnly.length == 3 -> "+$digitsOnly"
-            digitsOnly.length == 4 -> "+${digitsOnly[0]} (${digitsOnly.substring(1)}"
-            digitsOnly.length == 5 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4)}"
-
-            digitsOnly.length == 6 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4)}"
-
-            digitsOnly.length == 7 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4)}"
-
-            digitsOnly.length == 8 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4, 6)}-${digitsOnly.substring(6)}"
-
-            digitsOnly.length == 9 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4, 6)}-${digitsOnly.substring(6)}"
-
-            digitsOnly.length == 10 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4, 6)}-${
-                digitsOnly.substring(
-                    6,
-                    8
-                )
-            }-${digitsOnly.substring(8)}"
-
-            digitsOnly.length == 11 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4, 7)}-${
-                digitsOnly.substring(
-                    7,
-                    9
-                )
-            }-${digitsOnly.substring(9)}"
-
-            digitsOnly.length >= 12 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4, 7)}-${digitsOnly.substring(7, 9)}-${
-                digitsOnly.substring(
-                    9,
-                    11
-                )
-            }-${digitsOnly.substring(11, minOf(15, digitsOnly.length))}"
-
-            else -> digitsOnly
+        val rest = digits.substring(1)
+        return buildString {
+            append('+').append(digits[0])
+            if (rest.isNotEmpty()) append(" (").append(rest.take(3))
+            if (rest.length >= 3) append(')')
+            if (rest.length > 3) append(' ').append(rest.substring(3, minOf(6, rest.length)))
+            if (rest.length > 6) append('-').append(rest.substring(6, minOf(8, rest.length)))
+            if (rest.length > 8) append('-').append(rest.substring(8, minOf(10, rest.length)))
+            if (rest.length > 10) append('-').append(rest.substring(10))
         }
-
-
-
-        return result
     }
+
+    /**
+     * Приводит цифры к российскому плану нумерации: ведущая «8»
+     * (транк-префикс) заменяется на код страны «7».
+     */
+    private fun String.normalizeRu(): String =
+        if (isNotEmpty() && this[0] == '8') "7${substring(1)}" else this
 
     /**
      * Извлекает только цифры из отформатированного номера
@@ -120,79 +48,4 @@ object PhoneFormatter {
         val digits = extractDigits(phone)
         return digits.length >= 10 && digits.length <= 15
     }
-
-    /**
-     * Получает маску для ввода номера телефона
-     */
-    fun getPhoneMask(input: String): String {
-        val digitsOnly = input.filter { it.isDigit() }
-
-        return when {
-            digitsOnly.isEmpty() -> "+"
-            digitsOnly.length == 1 -> "+$digitsOnly"
-            digitsOnly.length == 2 -> "+$digitsOnly"
-            digitsOnly.length == 3 -> "+$digitsOnly"
-            digitsOnly.length == 4 -> "+${digitsOnly[0]} (${digitsOnly.substring(1)}"
-            digitsOnly.length == 5 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4)}"
-
-            digitsOnly.length == 6 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4)}"
-
-            digitsOnly.length == 7 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4)}"
-
-            digitsOnly.length == 8 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4, 6)}-${digitsOnly.substring(6)}"
-
-            digitsOnly.length == 9 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4, 6)}-${digitsOnly.substring(6)}"
-
-            digitsOnly.length == 10 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4, 6)}-${
-                digitsOnly.substring(
-                    6,
-                    8
-                )
-            }-${digitsOnly.substring(8)}"
-
-            digitsOnly.length >= 11 -> "+${digitsOnly[0]} (${
-                digitsOnly.substring(
-                    1,
-                    4
-                )
-            }) ${digitsOnly.substring(4, 7)}-${digitsOnly.substring(7, 9)}-${
-                digitsOnly.substring(
-                    9,
-                    11
-                )
-            }-${digitsOnly.substring(11, minOf(15, digitsOnly.length))}"
-
-            else -> digitsOnly
-        }
-    }
-} 
+}

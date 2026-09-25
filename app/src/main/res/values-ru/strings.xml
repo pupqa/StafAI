@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Professional Skills  -->
+    <string name="professional_skills">Профессиональные навыки</string>
+    <string name="role">Роль</string>
+    <string name="duration">Сроки участия</string>
+    <string name="tech_stack">Стек технологий</string>
+    <string name="app_name">СтафИИ</string>
+
+    <string name="auth_app_name">Вход СтафИИ</string>
+    <string name="reg_app_name">Регистрация СтафИИ</string>
+    <!--  Navigation  -->
+    <string name="nav_list">Список резюме</string>
+    <string name="nav_form">Создание резюме</string>
+    <string name="nav_preview">Предпросмотр</string>
+    <string name="nav_settings">Настройки</string>
+    <string name="nav_dashboard">Панель управления</string>
+    <string name="nav_trash">Корзина</string>
+    <string name="back">Назад</string>
+    <string name="add">Добавить</string>
+    <string name="edit_resume">Редактировать</string>
+    <string name="drafts_section">Черновики</string>
+    <string name="draft_badge">Черновик</string>
+    <string name="draft_hint">Резюме не заполнено — нажмите, чтобы продолжить</string>
+    <string name="cancel">Закрыть</string>
+    <!--  Form  -->
+    <string name="personal_info">Общая информация</string>
+    <string name="full_name">ФИО</string>
+    <string name="specialization">Желаемая должность</string>
+    <string name="specialization_filter">Специализация</string>
+    <string name="total_experience">Общий опыт (лет)</string>
+    <string name="experience">Опыт</string>
+
+
+    <!-- Settings Screen -->
+    <string name="settings_section_api">API-ключ</string>
+    <string name="settings_api_key_description">Ключ используется для обращения к языковой модели. Хранится локально на устройстве.</string>
+    <string name="settings_api_key_label">API-ключ</string>
+    <string name="settings_show_key">Показать ключ</string>
+    <string name="settings_hide_key">Скрыть ключ</string>
+    <string name="settings_api_key_save">Сохранить ключ</string>
+    <string name="settings_api_key_saved">Сохранено</string>
+    <string name="settings_api_key_saved_snackbar">API-ключ сохранён</string>
+
+    <string name="settings_section_appearance">Оформление</string>
+    <string name="settings_theme_light">Светлая</string>
+    <string name="settings_theme_dark">Тёмная</string>
+    <string name="settings_theme_hint">Перезапуск приложения не требуется</string>
+
+    <!-- Settings: App section -->
+    <string name="settings_section_app">Приложение</string>
+    <string name="settings_language_row">Язык интерфейса</string>
+    <string name="settings_language_ru">Русский</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_help">Помощь</string>
+    <string name="settings_about">О приложении</string>
+    <string name="settings_privacy_policy">Политика конфиденциальности</string>
+    <string name="version_footer">СтафИИ · версия %1$s (%2$d)</string>
+
+    <string name="filters">Фильтры</string>
+    <string name="cv_control_panel">Панель управления CV</string>
+    <string name="specialization_experience">Опыт в специальности (лет)</string>
+    <string name="education">Образование</string>
+    <string name="about_me">О себе</string>
+    <string name="email">Электронная почта</string>
+    <string name="phone">Номер телефона</string>
+    <string name="location">Город</string>
+    <string name="languages">Иностранные языки</string>
+    <string name="language_name">Язык</string>
+    <string name="languages_name">Языки</string>
+    <string name="language_level">Уровень</string>
+    <string name="skills">Навыки</string>
+    <string name="hard_skills">Технические навыки (hard skills)</string>
+    <string name="operating_systems">Операционные системы</string>
+    <string name="programming_languages">Языки программирования</string>
+    <string name="frameworks">Фреймворки</string>
+    <string name="libraries">Библиотеки</string>
+    <string name="databases">Базы данных</string>
+    <string name="other_technologies">Другие технологии</string>
+    <string name="certifications">Сертификаты</string>
+    <string name="soft_skills">Гибкие навыки (soft skills)</string>
+    <string name="soft_skills_hint">Выберите навык из списка или введите свой и нажмите «Готово»</string>
+    <string name="add_skill">Добавить навык</string>
+    <string name="desired_job">Желаемая работа и условия</string>
+    <string name="employment">Желаемая занятость</string>
+    <string name="work_schedule">Желаемый график</string>
+    <string name="add_photo">Добавить фото</string>
+    <string name="change_photo">Заменить фото</string>
+    <string name="remove_photo">Убрать фото</string>
+    <string name="salary_from">Зарплата от (₽/мес)</string>
+    <string name="salary_to">Зарплата до (₽/мес)</string>
+    <string name="salary_hint">Сумма в рублях, например 150000</string>
+    <string name="relocation">Готовность к релокации</string>
+    <string name="relocation_required_hint">Поле обязательное: выберите вариант</string>
+    <string name="relocation_cities">Города релокации</string>
+    <string name="relocation_cities_hint">Через запятую, например: Москва, Казань</string>
+    <string name="education_level">Уровень образования</string>
+    <string name="education_specialty">Специальность</string>
+    <string name="education_institution">Учебное заведение</string>
+    <string name="education_specialty_hint">Начните вводить — список отфильтруется по уровню</string>
+    <string name="add_education_entry">Добавить ещё одно образование</string>
+    <string name="programming_languages_hint">Например: Kotlin, Python, Go</string>
+    <string name="tech_stack_hint">Например: Kotlin, Compose, Room</string>
+    <string name="ai_improve">✨ Улучшить</string>
+    <string name="ai_generate">✨ Сгенерировать</string>
+    <string name="ai_busy">ИИ пишет текст…</string>
+    <string name="vacancy_match_title">Сопоставить с вакансией</string>
+    <string name="vacancy_match_hint">Вставьте текст вакансии…</string>
+    <string name="vacancy_match_run">Сопоставить</string>
+    <string name="vacancy_match_score">Соответствие</string>
+    <string name="vacancy_match_matched">Совпадает</string>
+    <string name="vacancy_match_missing">Не хватает</string>
+    <string name="social_links">Соцсети и профили</string>
+    <string name="social_link_platform">Платформа</string>
+    <string name="social_link_url">Ссылка или ник</string>
+    <string name="social_link_hint">Например: @username или https://…</string>
+    <string name="add_social_link">Добавить ссылку</string>
+    <string name="achievements">Достижение</string>
+    <string name="prof_achievements">Профессиональное достижение</string>
+    <string name="projects">Проекты</string>
+    <string name="project">Проект</string>
+    <string name="project_name">Название проекта</string>
+    <string name="project_role">Роль в проекте</string>
+    <string name="project_duration">Сроки участия</string>
+    <string name="project_description">Описание проекта</string>
+    <string name="project_team_size">Размер команды</string>
+    <string name="project_duration_hint">Например: 2023 — 2025 или 8 месяцев</string>
+    <string name="project_tasks_hint">Одна задача или достижение на строку — попадёт в документ буллетом</string>
+    <string name="project_link">Ссылка на проект</string>
+    <string name="project_link_hint">https://github.com/…, демо или публикация</string>
+    <string name="projects_empty_hint">Добавьте 2–4 ключевых проекта: название, роль, стек и измеримый результат</string>
+
+    <!-- Развёрнутые подсказки по заполнению (кнопка «?» у поля): интро + string-array советов -->
+    <string name="tips_eyebrow">Советы по заполнению</string>
+    <string name="tips_icon_description">Открыть советы по заполнению</string>
+    <string name="tips_position_intro">Должность — первое, что видит рекрутер. Указывайте её так, как она звучит в вакансиях, на которые планируете откликаться.</string>
+    <string-array name="tips_position">
+        <item>Используйте рыночные названия: «Android-разработчик», а не «программист» или код должности из штатного расписания.</item>
+        <item>Один заголовок — одна специализация; смежное направление добавляйте через запятую: «Аналитик данных, BI».</item>
+        <item>Укажите уровень, если уверены в нём: «Middle+», «Senior», — без завышения.</item>
+        <item>Избегайте слов «стажёр» и «универсал»: они занижают ценность даже сильного кандидата.</item>
+        <item>Сверьте формулировку с заголовками 3–5 актуальных вакансий — она должна совпадать.</item>
+    </string-array>
+    <string name="tips_experience_intro">Общий опыт — число полных лет работы по профессии, включая смежные роли.</string>
+    <string-array name="tips_experience">
+        <item>Считайте годы суммарно: фриланс и подработки тоже входят, если были по специальности.</item>
+        <item>Опыт по специальности может быть меньше общего — это нормально.</item>
+        <item>Если опыта меньше года, укажите 0: честность важнее завышения, а навыки покажут проекты.</item>
+        <item>Не округляйте 11 месяцев до двух лет — на собеседовании это легко проверяется.</item>
+    </string-array>
+    <string name="tips_about_intro">«О себе» — короткая визитка из 3–5 предложений: кто вы, ваши сильные стороны и польза для компании.</string>
+    <string-array name="tips_about">
+        <item>Формула: специализация + годы опыта + ключевая технология или домен + главное достижение.</item>
+        <item>Пишите о пользе для работодателя, а не о жизненных целях.</item>
+        <item>Добавьте 1–2 измеримых факта: вывел приложение в топ-10, сократил время сборки на 40 процентов.</item>
+        <item>Не дублируйте весь список навыков — для него есть отдельный раздел.</item>
+        <item>Избегайте шаблонов: «командный игрок» и «стрессоустойчивый» пишут все.</item>
+    </string-array>
+    <string name="tips_salary_intro">Зарплатная вилка ускоряет подбор: рекрутер сразу видит, совпадаете ли вы по бюджету.</string>
+    <string-array name="tips_salary">
+        <item>Обязательно укажите нижнюю границу — предложения ниже неё рассматривать не будете.</item>
+        <item>Ориентируйтесь на медианные зарплаты по позиции и городу, а не на прошлую зарплату.</item>
+        <item>Верхнюю границу ставьте на 15–20 процентов выше ожидаемого минимума — останется пространство для торга.</item>
+        <item>Суммы указывайте до вычета налогов, если не оговорено иное.</item>
+    </string-array>
+    <string name="tips_hard_skills_intro">Перечисляйте только те технологии, которыми реально владеете: на собеседовании спросят о каждой второй.</string>
+    <string-array name="tips_hard_skills">
+        <item>Начинайте с главного для целевой вакансии — порядок имеет значение.</item>
+        <item>Указывайте конкретные названия и версии, где это важно: Kotlin, PostgreSQL, Docker.</item>
+        <item>Не добавляйте технологии «на всякий случай»: лишние строки размывают профиль и провоцируют каверзные вопросы.</item>
+        <item>Сверьтесь со стеком из 3–5 вакансий мечты и честно закройте максимум строк.</item>
+    </string-array>
+    <string name="tips_certifications_intro">Сертификаты официально подтверждают навыки — особенно ценно при небольшом коммерческом опыте.</string>
+    <string-array name="tips_certifications">
+        <item>Формат: название сертификата, организация, год. Пример: Google Cloud Architect, Google, 2024.</item>
+        <item>Сначала свежие и профильные; устаревшие можно опустить.</item>
+        <item>Онлайн-курсы указывайте только с экзаменом или итоговым проектом.</item>
+        <item>Ссылка на верификацию (Credential ID) повышает доверие.</item>
+    </string-array>
+    <string name="tips_achievements_intro">Достижения — главный раздел для рекрутера: он показывает результат, а не обязанности.</string>
+    <string-array name="tips_achievements">
+        <item>Формула: глагол + что сделали + измеримый итог. Оптимизировал запросы — отчёты собираются в 3 раза быстрее.</item>
+        <item>Цифры решают: деньги, сэкономленное время, проценты, размер команды, число пользователей.</item>
+        <item>Берите примеры за последние 2–3 года, по одному сильному факту на строку.</item>
+        <item>Слабое достижение лучше превратить в цифру, чем удалить: даже обучил двух стажёров — вклад.</item>
+    </string-array>
+    <string name="tips_soft_skills_intro">Гибкие навыки должны подтверждаться фактами в резюме — список держите согласованным с ними.</string>
+    <string-array name="tips_soft_skills">
+        <item>Выбирайте 4–6 навыков под вакансию: коммуникация для клиентских ролей, системность для процессных.</item>
+        <item>Каждый навык должен подкрепляться строкой в опыте: лидерство — был тимлидом проекта.</item>
+        <item>Не пишите противоположности рядом: «аналитический склад ума» вместе с «творческим хаосом» выглядит противоречиво.</item>
+        <item>Шаблонную «стрессоустойчивость» оставляйте, только если подтвердите примером.</item>
+    </string-array>
+    <string name="tips_project_description_intro">Описание — это 2–4 предложения о том, что за продукт перед нами и какую роль вы играли.</string>
+    <string-array name="tips_project_description">
+        <item>Структура: суть продукта → масштаб (пользователи, рынок) → ваша зона ответственности.</item>
+        <item>Объясняйте простыми словами: рекрутер может быть нетехническим специалистом.</item>
+        <item>Pet-проекты указывайте смело, если в них есть реальная ценность и ссылка на код.</item>
+        <item>Не копируйте README — перепишите его от своего лица.</item>
+    </string-array>
+    <string name="tips_project_tasks_intro">Задачи — конкретные пункты того, что вы делали; каждый попадёт в PDF отдельным буллетом.</string>
+    <string-array name="tips_project_tasks">
+        <item>Начинайте каждый пункт с глагола действия: разработал, внедрил, автоматизировал.</item>
+        <item>Одна задача — одна строка; крупный блок работы дробите на 2–3 пункта.</item>
+        <item>Добавьте цифры хотя бы к половине пунктов: срок, объём, рост метрики.</item>
+        <item>Уберите рутину без результата: 3–5 сильных пунктов лучше десяти расплывчатых.</item>
+    </string-array>
+    <string name="tips_education_intro">Указывайте образование начиная с самого высокого уровня; курсы добавляйте отдельными записями.</string>
+    <string-array name="tips_education">
+        <item>Специальность пишите как в дипломе, но понятным языком: «Программная инженерия».</item>
+        <item>Для незаконченного образования укажите ожидаемый год выпуска.</item>
+        <item>Если опыта мало, образование — главный актив: добавьте ключевые курсы и средний балл, если он высокий.</item>
+        <item>Опытным специалистам достаточно одной последней профильной записи.</item>
+    </string-array>
+    <string name="tips_language_levels_intro">Уровни языка указывайте по международной шкале CEFR — её понимают и HR, и автоматические фильтры.</string>
+    <string-array name="tips_language_levels">
+        <item>A1–A2 — базовый: простые фразы и чтение со словарём.</item>
+        <item>B1–B2 — уверенный: переписка, звонки и рабочие встречи.</item>
+        <item>C1–C2 — свободный: переговоры, презентации, документы.</item>
+        <item>Честно оценивайте английский: завышенный уровень раскроется на первом техническом интервью.</item>
+    </string-array>
+    <string name="tips_social_links_intro">Профили должны работать на вас: рекрутер переходит по 1–2 ссылкам — сделайте их показательными.</string>
+    <string-array name="tips_social_links">
+        <item>Обязательные: GitHub или портфолио для технических ролей, LinkedIn/hh — для остальных.</item>
+        <item>Перед откликом приведите профили в порядок: закреплённые репозитории, фото, заполненное описание.</item>
+        <item>Telegram удобнее телефона для быстрых контактов — укажите ник.</item>
+        <item>Максимум 3–4 ссылки: больше выглядит шумом.</item>
+    </string-array>
+    <string name="doc_link_fmt">Ссылка: %1$s</string>
+    <string name="csv_col_project_links">Проекты: ссылки</string>
+    <string name="project_industry">Индустрия</string>
+    <string name="project_technologies">Технологии</string>
+    <string name="main_tasks">Основные задачи</string>
+    <string name="project_achievements">Достижения в проекте</string>
+    <string name="summary">Краткое описание</string>
+    <string name="save">Сохранить</string>
+    <string name="retry">Повторить</string>
+    <string name="required_field">Это поле обязательно для заполнения</string>
+    <string name="required_field_all">Заполните все обязательные поля</string>
+    <string name="empty_resume_list">Нет резюме. Создайте ваше первое резюме!</string>
+    <!--  Dashboard  -->
+    <string name="dashboard_title">Панель управления</string>
+    <!--  Preview  -->
+    <string name="share">Поделиться</string>
+    <string name="download">Скачать</string>
+    <string name="open">Открыть</string>
+    <string name="analyze">Анализировать</string>
+    <string name="apply_suggestions">Применить предложения</string>
+    <!--  Errors  -->
+    <string name="error_loading">Не удалось загрузить резюме</string>
+    <string name="error_saving">Не удалось сохранить резюме</string>
+    <string name="error_deleting">Не удалось удалить резюме</string>
+    <string name="error_analyzing">Не удалось проанализировать резюме</string>
+    <string name="error_generating_pdf">Ошибка генерации PDF</string>
+    <string name="error_invalid_email">Пожалуйста, введите корректный email адрес</string>
+    <string name="error_invalid_phone">Пожалуйста, введите корректный номер телефона</string>
+    <string name="phone_format_hint">Формат: 88005553535</string>
+
+    <string name="share_pdf">Поделиться</string>
+    <string name="download_pdf">Предпросмотр</string>
+    <string name="analyze_pdf">Анализ</string>
+    <string name="generating_pdf">Генерация PDF…</string>
+    <string name="delete">Удалить</string>
+    <string name="delete_confirm">УДАЛИТЬ</string>
+    <string name="cancel_action">ОТМЕНА</string>
+
+    <string name="trash_restore">Восстановить</string>
+    <string name="trash_empty_all">Очистить</string>
+    <string name="trash_empty_title">Корзина пуста</string>
+    <string name="trash_empty_hint">Удалённые резюме попадают сюда — их можно восстановить в любой момент</string>
+    <string name="trash_delete_forever_title">Удалить навсегда?</string>
+    <string name="trash_delete_forever_message">Резюме будет удалено без возможности восстановления.</string>
+    <string name="trash_empty_confirm_title">Очистить корзину?</string>
+    <string name="trash_empty_confirm_message">Все резюме в корзине будут удалены навсегда. Это действие нельзя отменить.</string>
+
+    <string name="preview">Предпросмотр</string>
+
+    <string name="resume_analysis">Анализ резюме</string>
+
+    <string name="the_analysis_is_completed">Анализ завершен. Нажмите \"Анализировать\" для повторного анализа.</string>
+    <string name="template_test">Тестовый</string>
+
+    <string name="create_prof_resume">Создавай профессиональные резюме с ИИ</string>
+
+    <!-- Logout Dialog -->
+    <string name="logout_title">Выход из аккаунта</string>
+    <string name="logout_message">Вы уверены, что хотите выйти из аккаунта?</string>
+    <string name="logout_confirm">ВЫЙТИ</string>
+    <string name="logout_cancel">ОТМЕНА</string>
+
+    <!-- Phone and Google Authentication -->
+    <string name="phone_auth_title">Вход по номеру телефона</string>
+    <string name="enter_phone_number">Введите номер телефона</string>
+    <string name="phone_number_hint">+7 (999) 123-45-67</string>
+    <string name="send_verification_code">Отправить код</string>
+    <string name="enter_verification_code">Введите код подтверждения</string>
+    <string name="verification_code_hint">123456</string>
+    <string name="verify_code">Подтвердить код</string>
+    <string name="resend_code">Отправить код повторно</string>
+    <string name="verification_code_sent">Код подтверждения отправлен на %s</string>
+
+    <string name="google_sign_in">Войти через Google</string>
+    <string name="sign_in_with_email">Войти через email</string>
+    <string name="sign_in_with_phone">Войти по телефону</string>
+    <string name="or_divider">или</string>
+
+    <!-- Auth Method Selection -->
+    <string name="choose_auth_method">Выберите способ входа</string>
+    <string name="back_to_auth_methods">Назад к способам входа</string>
+
+    <!-- Phone Auth Errors -->
+    <string name="error_invalid_phone_format">Неверный формат номера телефона</string>
+    <string name="error_verification_code_invalid">Неверный код подтверждения</string>
+    <string name="error_verification_code_expired">Код подтверждения истек</string>
+    <string name="error_phone_auth_failed">Ошибка аутентификации по телефону</string>
+
+    <!-- Google Auth Errors -->
+    <string name="error_google_sign_in_failed">Ошибка входа через Google</string>
+    <string name="error_google_sign_in_cancelled">Вход через Google отменен</string>
+    <string name="error_google_account_not_found">Аккаунт Google не найден</string>
+
+
+    <string name="clear_all_filters">Сбросить все</string>
+
+    <!-- Preview: шаблоны и оформление PDF -->
+    <string name="choose_template_style">Выберите стиль шаблона</string>
+    <string name="template_modern">Современный</string>
+    <string name="template_creative">Креативный</string>
+    <string name="template_minimalist">Минималистичный</string>
+    <string name="template_professional">Профессиональный</string>
+    <string name="template_sidebar">Сайдбар</string>
+    <string name="accent_color_title">Акцентный цвет</string>
+    <string name="accent_color_default">Шаблона</string>
+    <string name="section_order_title">Порядок секций</string>
+    <string name="section_summary">Резюме</string>
+    <string name="section_about">О себе</string>
+    <string name="section_education">Образование</string>
+    <string name="section_languages">Языки</string>
+    <string name="section_skills">Навыки</string>
+    <string name="section_achievements">Достижения</string>
+    <string name="section_projects">Проекты</string>
+    <string name="section_order_hint">В шаблоне «Сайдбар» языки и навыки всегда в сайдбаре</string>
+    <string name="previews_loading">Рендер превью…</string>
+    <string name="preview_page_x_of_y">Страница %1$d из %2$d</string>
+    <string name="preview_prev_page">Предыдущая страница</string>
+    <string name="preview_next_page">Следующая страница</string>
+    <string name="export_section_title">Экспорт</string>
+    <string name="export_docx">DOCX</string>
+    <string name="export_csv">CSV</string>
+    <string name="export_print">Печать</string>
+    <string name="export_pdf">PDF</string>
+    <string name="export_hint">DOCX — редактируемый формат, CSV — таблица, PDF — печать и отправка</string>
+
+    <!-- Настройки: данные и безопасность -->
+    <string name="settings_section_data">Данные</string>
+    <string name="settings_backup_export">Создать бэкап (JSON)</string>
+    <string name="settings_backup_import">Восстановить из бэкапа</string>
+    <string name="settings_backup_hint">Бэкап сохраняется в загрузки и содержит все резюме вместе с фото</string>
+    <string name="settings_export_all_csv">Экспорт всех резюме в CSV</string>
+    <string name="settings_section_security">Безопасность</string>
+    <string name="settings_biometric_title">Блокировка по биометрии</string>
+    <!-- UX-полировка: undo, меню карточки, этапы анализа, оформление PDF -->
+    <string name="moved_to_trash">Перемещено в корзину</string>
+    <string name="action_undo">Отменить</string>
+    <string name="card_more_actions">Ещё действия</string>
+    <string name="card_share_pdf">Поделиться PDF</string>
+    <string name="empty_resume_hint">Создайте резюме с нуля или импортируйте готовый PDF — поля заполнятся автоматически</string>
+    <string name="analysis_stage_1">Читаем резюме…</string>
+    <string name="analysis_stage_2">Сравниваем с требованиями рынка…</string>
+    <string name="analysis_stage_3">Ищем сильные стороны и пробелы…</string>
+    <string name="analysis_stage_4">Формируем рекомендации…</string>
+    <string name="form_errors_tap_hint">Нажмите, чтобы открыть вкладку с незаполненными полями</string>
+    <string name="style_settings_button">Оформление</string>
+    <string name="translate_dialog_hint_fmt">Будет создана копия «%1$s», оригинал останется без изменений.</string>
+    <string name="cd_move_up">Переместить выше</string>
+    <string name="cd_move_down">Переместить ниже</string>
+
+    <string name="settings_biometric_hint">Запрашивать отпечаток или лицо при входе в приложение</string>
+    <string name="settings_pdf_embed_title">Встраивать данные резюме в PDF</string>
+    <string name="settings_pdf_embed_hint">Скрытый слой для повторного импорта файла этим приложением. Для отправки рекрутерам держите выключенным: иначе в файле незаметно дублируются зарплата и ИИ-анализ.</string>
+
+    <!-- ========== NEW: Hardcoded strings extracted from Kotlin files ========== -->
+
+    <!-- Biometric Lock Screen (MainActivity) -->
+    <string name="biometric_locked_title">СтафИИ заблокирован</string>
+    <string name="biometric_locked_subtitle">Подтвердите личность, чтобы открыть резюме</string>
+    <string name="biometric_unlock">Разблокировать</string>
+
+    <!-- Analysis Screen -->
+    <string name="analysis_loading">Анализируем резюме…</string>
+    <string name="analysis_loading_hint">Это может занять несколько секунд</string>
+    <string name="analysis_error_title">Ошибка анализа</string>
+    <string name="analysis_completeness">Анализ полноты</string>
+    <string name="analysis_structure">Анализ структуры</string>
+    <string name="analysis_strengths">Сильные стороны</string>
+    <string name="analysis_improvements">Зоны для улучшения</string>
+    <string name="analysis_recommendations">Рекомендации</string>
+    <string name="analysis_additional_params">Дополнительные параметры</string>
+    <string name="analysis_completed">Анализ резюме #%1$s завершён</string>
+    <string name="analysis_overall_rating">Общая оценка</string>
+    <string name="analysis_completeness_detail">  ·  полнота %1$d%%</string>
+    <string name="analysis_resume_completeness">Заполненность резюме</string>
+    <string name="analysis_strengths_label">Сильные стороны</string>
+    <string name="analysis_improvements_label">Улучшения</string>
+    <string name="analysis_recommendations_label">Рекомендации</string>
+    <string name="analysis_collapse">Свернуть</string>
+    <string name="analysis_expand">Развернуть</string>
+    <string name="analysis_empty_title">Анализ не содержит данных</string>
+    <string name="analysis_empty_hint">Попробуйте проанализировать резюме ещё раз или проверьте содержимое резюме</string>
+    <string name="analysis_retry">Повторить анализ</string>
+
+    <!-- Dashboard Content -->
+    <string name="dashboard_resumes_count">РЕЗЮМЕ · %1$d</string>
+    <string name="dashboard_compare_select">Сравнение: выберите 2</string>
+    <string name="dashboard_compare">Сравнить</string>
+    <string name="dashboard_no_resumes">Резюме не найдены</string>
+    <string name="dashboard_compare_close">Закрыть</string>
+    <string name="dashboard_compare_title">Сравнение кандидатов</string>
+    <string name="dashboard_col_position">Должность</string>
+    <string name="dashboard_col_experience">Опыт (лет)</string>
+    <string name="dashboard_col_salary">Зарплата</string>
+    <string name="dashboard_col_city">Город</string>
+    <string name="dashboard_col_relocation">Релокация</string>
+    <string name="dashboard_col_languages">Языки</string>
+    <string name="dashboard_col_technologies">Технологии</string>
+    <string name="dashboard_col_projects">Проектов</string>
+    <string name="dashboard_col_status">Статус</string>
+    <string name="dashboard_search_hint">Имя или специализация</string>
+
+    <!-- Filter Section -->
+    <string name="filter_work_experience">ОПЫТ РАБОТЫ</string>
+    <string name="filter_junior">Junior (&lt; 3 лет)</string>
+    <string name="filter_middle">Middle (3-5 лет)</string>
+    <string name="filter_senior">Senior (&gt; 5 лет)</string>
+    <string name="filter_conditions">УСЛОВИЯ</string>
+    <string name="filter_favorites_only">Только избранные</string>
+    <string name="filter_ready_to_relocate">Готовы к релокации</string>
+    <string name="filter_status_group">СТАТУС</string>
+    <string name="filter_salary_from_label">ЗАРПЛАТА ОТ (₽)</string>
+    <string name="filter_any">Любая</string>
+    <string name="filter_reset">Сбросить</string>
+    <string name="filter_apply">Применить</string>
+    <string name="filter_apply_count">Применить · %1$d</string>
+
+    <!-- Resume Card -->
+    <string name="card_remove_favorite">Убрать из избранного</string>
+    <string name="card_add_favorite">В избранное</string>
+    <string name="card_duplicate">Дублировать</string>
+    <string name="card_technologies_count">Технологий: %1$d</string>
+    <string name="card_salary_from_val">от %1$s₽</string>
+    <string name="card_salary_to_val"> до %1$s₽</string>
+    <string name="card_relocation_short">релокация</string>
+    <string name="card_status_none">Статус: нет</string>
+    <string name="card_experience_val">Опыт: %1$s</string>
+
+    <!-- Resume Preview Screen -->
+    <string name="preview_fallback_title">Резюме</string>
+    <string name="preview_ai_analysis">Анализ ИИ</string>
+
+    <!-- Resume List / Trash shared -->
+    <string name="untitled">Без названия</string>
+    <string name="trash_restored">«%1$s» восстановлено</string>
+    <string name="trash_deleted_date">Удалено %1$s</string>
+
+    <!-- Form Validators -->
+    <string name="validation_full_name">Укажите ФИО</string>
+    <string name="validation_specialization">Укажите желаемую должность</string>
+    <string name="validation_total_experience">Укажите общий опыт</string>
+    <string name="validation_experience_number">Опыт должен быть числом (лет)</string>
+    <string name="validation_email_invalid">Некорректный email</string>
+    <string name="validation_phone_short">Номер слишком короткий</string>
+    <string name="validation_salary_from_required">Укажите зарплату «от»</string>
+    <string name="validation_salary_number">Введите число (сумма в рублях)</string>
+    <string name="validation_social_link_invalid">Некорректная ссылка или @ник</string>
+    <string name="validation_salary_range">«До» не может быть меньше «от»</string>
+
+    <!-- Form components -->
+    <string name="form_progress_description">Прогресс заполнения %1$d процентов</string>
+    <string name="form_save_resume">Сохранить резюме</string>
+    <string name="form_remove_tag">Убрать %1$s</string>
+    <string name="form_education_level_selection">Выбор уровня образования</string>
+    <string name="form_hide_suggestions">Скрыть подсказки</string>
+    <string name="form_show_suggestions">Показать подсказки</string>
+    <string name="form_autocomplete_field">%1$s, поле с автодополнением</string>
+
+    <!-- ViewModel error/success messages -->
+    <string name="error_vacancy_match_failed">Сопоставление с вакансией не удалось</string>
+    <string name="error_vacancy_match">Не удалось сопоставить</string>
+    <string name="error_resume_not_found">Резюме не найдено</string>
+    <string name="error_loading_resume_fmt">Не удалось загрузить резюме: %1$s</string>
+    <string name="error_unexpected_analysis">Неожиданная ошибка во время процесса анализа</string>
+    <string name="error_analysis_failed">Анализ завершился с ошибкой</string>
+    <string name="error_unknown">Неизвестная ошибка</string>
+    <string name="error_unexpected_fmt">Неожиданная ошибка: %1$s</string>
+    <string name="error_improve_failed">Не удалось улучшить текст</string>
+    <string name="error_generate_failed">Не удалось сгенерировать текст</string>
+    <string name="error_pdf_still_generating">Подождите, PDF ещё генерируется</string>
+    <string name="share_resume_chooser">Поделиться резюме</string>
+    <string name="error_pdf_not_found">PDF-файл не найден</string>
+    <string name="error_save_pdf_fmt">Не удалось сохранить PDF: %1$s</string>
+    <string name="error_share_pdf_fmt">Не удалось поделиться PDF: %1$s</string>
+    <string name="success_docx_saved">DOCX сохранён: %1$s</string>
+    <string name="error_create_docx">Не удалось создать DOCX</string>
+    <string name="error_create_docx_fmt">Не удалось создать DOCX: %1$s</string>
+    <string name="success_csv_saved">CSV сохранён: %1$s</string>
+    <string name="error_create_csv">Не удалось создать CSV</string>
+    <string name="error_create_csv_fmt">Не удалось создать CSV: %1$s</string>
+    <string name="error_create_downloads">Не удалось создать файл в загрузках</string>
+    <string name="error_open_for_writing">Не удалось открыть файл для записи</string>
+    <string name="error_no_resume_for_analysis">Нет резюме для анализа</string>
+    <string name="error_analyze_fmt">Не удалось проанализировать резюме: %1$s</string>
+    <string name="error_import_failed">Не удалось импортировать резюме</string>
+    <string name="error_delete_fmt">Не удалось удалить резюме: %1$s</string>
+    <string name="error_photo_save_fmt">Не удалось сохранить фото: %1$s</string>
+
+    <!-- Settings ViewModel messages -->
+    <string name="backup_saved">Бэкап сохранён в загрузки: %1$s</string>
+    <string name="backup_create_failed">Не удалось создать бэкап</string>
+    <string name="backup_create_failed_fmt">Не удалось создать бэкап: %1$s</string>
+    <string name="backup_open_failed">Не удалось открыть файл бэкапа</string>
+    <string name="backup_restore_count">Восстановлено резюме: %1$d</string>
+    <string name="backup_restore_failed">Не удалось восстановить бэкап</string>
+    <string name="backup_restore_failed_fmt">Не удалось восстановить: %1$s</string>
+    <string name="csv_export_saved">CSV сохранён в загрузки: %1$s</string>
+    <string name="csv_export_failed">Не удалось экспортировать CSV</string>
+    <string name="csv_export_failed_fmt">Не удалось создать CSV: %1$s</string>
+    <string name="biometric_not_configured">Биометрия не настроена на устройстве (добавьте отпечаток или лицо в системных настройках)</string>
+    <string name="biometric_lock_on">Блокировка включена</string>
+    <string name="biometric_lock_off">Блокировка выключена</string>
+
+    <!-- Trash ViewModel -->
+    <string name="trash_load_error">Ошибка загрузки корзины</string>
+    <string name="trash_load_error_fmt">Не удалось загрузить корзину: %1$s</string>
+    <string name="trash_restore_error">Не удалось восстановить резюме</string>
+    <string name="trash_restore_error_fmt">Не удалось восстановить резюме: %1$s</string>
+    <string name="trash_delete_error">Не удалось удалить резюме</string>
+    <string name="trash_delete_error_fmt">Не удалось удалить резюме: %1$s</string>
+    <string name="trash_empty_error">Не удалось очистить корзину</string>
+    <string name="trash_empty_error_fmt">Не удалось очистить корзину: %1$s</string>
+
+    <!-- ==================== Локализация RU/EN: документы (PDF/DOCX) ==================== -->
+    <string name="resume_name_not_specified">Имя не указано</string>
+    <string name="doc_prof_resume">Профессиональное резюме</string>
+    <string name="doc_key_achievements">Ключевые достижения</string>
+    <string name="doc_project_experience">Проектный опыт</string>
+    <string name="doc_technical_skills">Технические навыки</string>
+    <string name="doc_certifications_fmt">Сертификации: %1$s</string>
+    <string name="doc_soft_skills_fmt">Гибкие навыки: %1$s</string>
+    <string name="doc_project_fmt">Проект %1$d: %2$s</string>
+    <string name="doc_role_fmt">Роль: %1$s</string>
+    <string name="doc_duration_fmt">Срок: %1$s</string>
+    <string name="doc_team_fmt">Команда: %1$s</string>
+    <string name="doc_tech_fmt">Технологии: %1$s</string>
+    <string name="doc_experience_fmt">Опыт: %1$s</string>
+    <string name="doc_spec_experience_fmt">Опыт по специализации: %1$s</string>
+    <string name="doc_salary_line_full">Желаемая зарплата: от %1$s до %2$s ₽/мес</string>
+    <string name="doc_salary_line_from">Желаемая зарплата: от %1$s ₽/мес</string>
+    <string name="doc_salary_line_to">Желаемая зарплата: до %1$s ₽/мес</string>
+    <string name="doc_relocation_line">Релокация: %1$s</string>
+    <string name="doc_cities_suffix">\u00A0· города: %1$s</string>
+    <string name="doc_employment_line">Занятость: %1$s</string>
+    <string name="doc_schedule_line">График: %1$s</string>
+    <string name="pdf_page_footer_fmt">%1$s • %2$s • стр.\u00A0</string>
+    <string name="pdf_certifications">Сертификации</string>
+    <string name="pdf_soft_skills">Гибкие навыки</string>
+    <string name="duplicate_suffix">" (копия)"</string>
+
+    <!-- ==================== Статусы кандидата ==================== -->
+    <string name="status_none">Без статуса</string>
+    <string name="status_screening">Скрининг</string>
+    <string name="status_interview">Интервью</string>
+    <string name="status_offer">Оффер</string>
+    <string name="status_rejected">Отказ</string>
+
+    <!-- ==================== Сортировка дашборда ==================== -->
+    <string name="sort_by_modified">По изменению</string>
+    <string name="sort_by_salary">По зарплате</string>
+    <string name="sort_by_experience">По опыту</string>
+    <string name="sort_by_name">По имени</string>
+    <string name="sort_ascending">По возрастанию ↑</string>
+    <string name="sort_descending">По убыванию ↓</string>
+
+    <!-- ==================== Разные подписи и contentDescription ==================== -->
+    <string name="filter_salary_k_fmt">%1$dк+</string>
+    <string name="cd_add_resume">Добавить новое резюме</string>
+    <string name="cd_import_pdf">Импорт PDF</string>
+    <string name="cd_edit_resume">Редактировать резюме</string>
+    <string name="cd_rating">Рейтинг</string>
+    <string name="error_generic">Ошибка</string>
+    <string name="no_data">Нет данных</string>
+    <string name="action_ok">OK</string>
+    <string name="biometric_cancel">Отмена</string>
+
+    <!-- ==================== Сопроводительное письмо ==================== -->
+    <string name="cover_letter_title">Сопроводительное письмо</string>
+    <string name="cover_letter_vacancy_label">Текст вакансии</string>
+    <string name="cover_letter_vacancy_hint">Вставьте ключевые требования вакансии…</string>
+    <string name="cover_letter_generate">✨ Сгенерировать письмо</string>
+    <string name="cover_letter_generating">Пишем письмо…</string>
+    <string name="cover_letter_content_label">Текст письма</string>
+    <string name="cover_letter_empty_hint">Сгенерируйте письмо под конкретную вакансию — текст можно отредактировать и сохранить. Сохранённые письма появятся ниже.</string>
+    <string name="cover_letter_saved_list">Сохранённые письма</string>
+    <string name="cover_letter_saved">Письмо сохранено</string>
+    <string name="cover_letter_need_vacancy">Сначала вставьте текст вакансии</string>
+    <string name="cover_letter_generate_failed_fmt">Не удалось сгенерировать письмо: %1$s</string>
+    <string name="cover_letter_delete_confirm_title">Удалить письмо?</string>
+    <string name="cover_letter_delete_confirm_message">Письмо будет удалено без возможности восстановления.</string>
+
+    <!-- ==================== Перевод резюме ==================== -->
+    <string name="translate_action">Перевести</string>
+    <string name="translate_dialog_title">Язык перевода</string>
+    <string name="translate_to_en">На английский</string>
+    <string name="translate_to_ru">На русский</string>
+    <string name="translate_running">Переводим резюме…</string>
+    <string name="translate_done_fmt">Создан перевод: %1$s</string>
+    <string name="error_translate_fmt">Не удалось перевести резюме: %1$s</string>
+    <string name="version_suffix_en"> · EN</string>
+    <string name="version_suffix_ru"> · RU</string>
+
+    <string name="analysis_rating_scale">/ 5.0</string>
+    <string name="splash_logo_letter">С</string>
+    <string name="settings_api_key_placeholder">sk-…</string>
+    <string name="error_pdf_generate_fmt">Не удалось сгенерировать PDF: %1$s</string>
+
+    <!-- ==================== Уровни образования (SuggestionDictionary) ==================== -->
+    <string name="edu_level_svo">СПО</string>
+    <string name="edu_level_bachelor">Высшее (бакалавриат)</string>
+    <string name="edu_level_specialist">Высшее (специалитет)</string>
+    <string name="edu_level_master">Высшее (магистратура)</string>
+    <string name="edu_level_postgraduate">Послевузовское</string>
+    <string name="edu_level_additional">Дополнительное</string>
+
+    <!-- ==================== Варианты релокации ==================== -->
+    <string name="reloc_not_ready">Не готов к переезду</string>
+    <string name="reloc_ready">Готов к переезду</string>
+    <string name="reloc_conditional">Готов при определенных условиях</string>
+
+    <!-- ==================== Мок-анализ (AnalyzeCvUseCase) ==================== -->
+    <string name="mock_completeness_fmt">Резюме заполнено на %1$d%%: присутствуют ключевые разделы — персональные данные, навыки и опыт. Объём текста — %2$d символов. Структура читается хорошо, но часть разделов можно расширить, чтобы полнее раскрыть квалификацию.</string>
+    <string name="mock_logic">Логика изложения в целом последовательная: блоки не противоречат друг другу, опыт соотносится с заявленным стеком. Встречаются общие формулировки без измеримых результатов — из-за этого сложно оценить реальный вклад в проектах.</string>
+    <string name="mock_param_tech_relevance">Актуальность технологий</string>
+    <string name="mock_param_specialization_match">Соответствие специализации</string>
+    <string name="mock_param_project_quality">Качество описания проектов</string>
+    <string name="mock_param_structure_logic">Логичность структуры</string>
+    <string name="mock_param_achievement_specificity">Конкретность достижений</string>
+    <string name="mock_value_high">высокая</string>
+    <string name="mock_value_strong">сильное</string>
+    <string name="mock_value_moderate">среднее</string>
+    <string name="mock_value_needs_improvement">требует усиления</string>
+
+    <!-- ==================== Плейсхолдеры соцсетей ==================== -->
+    <string name="social_ph_vk">https://vk.com/ваш_id</string>
+    <string name="social_ph_telegram">https://t.me/ваш_ник</string>
+    <string name="social_ph_github">https://github.com/ваш_логин</string>
+    <string name="social_ph_gitlab">https://gitlab.com/ваш_логин</string>
+    <string name="social_ph_linkedin">https://linkedin.com/in/ваш_ник</string>
+    <string name="social_ph_habr">https://career.habr.com/ваш_ник</string>
+    <string name="social_ph_behance">https://behance.net/ваш_ник</string>
+    <string name="social_ph_dribbble">https://dribbble.com/ваш_ник</string>
+    <string name="social_ph_youtube">https://youtube.com/@ваш_канал</string>
+    <string name="social_ph_site">https://ваш-сайт.ru</string>
+    <string name="social_ph_generic">https://… или @ник</string>
+
+    <!-- ==================== Массивы подсказок автодополнения ==================== -->
+    <string-array name="suggestion_cities">
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Новосибирск</item>
+        <item>Екатеринбург</item>
+        <item>Казань</item>
+        <item>Нижний Новгород</item>
+        <item>Челябинск</item>
+        <item>Самара</item>
+        <item>Ростов-на-Дону</item>
+        <item>Краснодар</item>
+        <item>Воронеж</item>
+        <item>Пермь</item>
+        <item>Волгоград</item>
+        <item>Уфа</item>
+        <item>Красноярск</item>
+        <item>Тюмень</item>
+        <item>Сочи</item>
+    </string-array>
+    <string-array name="suggestion_languages">
+        <item>Русский</item>
+        <item>Английский</item>
+        <item>Немецкий</item>
+        <item>Французский</item>
+        <item>Испанский</item>
+        <item>Итальянский</item>
+        <item>Китайский</item>
+        <item>Японский</item>
+        <item>Корейский</item>
+        <item>Турецкий</item>
+        <item>Арабский</item>
+        <item>Португальский</item>
+    </string-array>
+    <string-array name="suggestion_language_levels">
+        <item>A1 — Начальный</item>
+        <item>A2 — Элементарный</item>
+        <item>B1 — Средний</item>
+        <item>B2 — Средне-продвинутый</item>
+        <item>C1 — Продвинутый</item>
+        <item>C2 — В совершенстве</item>
+        <item>Родной</item>
+    </string-array>
+    <string-array name="suggestion_positions">
+        <item>Junior Android-разработчик</item>
+        <item>Android-разработчик</item>
+        <item>Senior Android-разработчик</item>
+        <item>iOS-разработчик</item>
+        <item>Flutter-разработчик</item>
+        <item>Frontend-разработчик</item>
+        <item>Backend-разработчик</item>
+        <item>Java-разработчик</item>
+        <item>Kotlin-разработчик</item>
+        <item>Python-разработчик</item>
+        <item>Go-разработчик</item>
+        <item>Fullstack-разработчик</item>
+        <item>QA-инженер</item>
+        <item>Automation QA-инженер</item>
+        <item>DevOps-инженер</item>
+        <item>SRE-инженер</item>
+        <item>Data Scientist</item>
+        <item>Data Engineer</item>
+        <item>ML-инженер</item>
+        <item>Аналитик данных</item>
+        <item>Системный аналитик</item>
+        <item>Бизнес-аналитик</item>
+        <item>Product-менеджер</item>
+        <item>Project-менеджер</item>
+        <item>Team Lead</item>
+        <item>Tech Lead</item>
+        <item>Архитектор ПО</item>
+        <item>UX/UI-дизайнер</item>
+        <item>Веб-дизайнер</item>
+        <item>1С-разработчик</item>
+    </string-array>
+    <string-array name="suggestion_soft_skills">
+        <item>Коммуникабельность</item>
+        <item>Работа в команде</item>
+        <item>Тайм-менеджмент</item>
+        <item>Критическое мышление</item>
+        <item>Решение проблем</item>
+        <item>Адаптивность</item>
+        <item>Наставничество</item>
+        <item>Публичные выступления</item>
+        <item>Переговоры</item>
+        <item>Управление конфликтами</item>
+        <item>Эмпатия</item>
+        <item>Многозадачность</item>
+    </string-array>
+    <string-array name="suggestion_employment">
+        <item>Полная занятость</item>
+        <item>Частичная занятость</item>
+        <item>Подработка</item>
+        <item>Стажировка</item>
+    </string-array>
+    <string-array name="suggestion_work_schedule">
+        <item>Удалённая работа</item>
+        <item>Гибридный формат</item>
+        <item>Работа в офисе</item>
+    </string-array>
+    <string-array name="suggestion_social_platforms">
+        <item>Telegram</item>
+        <item>LinkedIn</item>
+        <item>GitHub</item>
+        <item>GitLab</item>
+        <item>Habr Career</item>
+        <item>Behance</item>
+        <item>Dribbble</item>
+        <item>YouTube</item>
+        <item>VK</item>
+        <item>Личный сайт</item>
+    </string-array>
+    <string-array name="suggestion_specialties_svo">
+        <item>Информационные системы и программирование</item>
+        <item>Компьютерные системы и комплексы</item>
+        <item>Сетевое и системное администрирование</item>
+        <item>Программирование в компьютерных системах</item>
+        <item>Многоканальные телекоммуникационные системы</item>
+        <item>Техническое обслуживание и ремонт радиоэлектронной техники</item>
+        <item>Экономика и бухгалтерский учёт</item>
+        <item>Право и организация социального обеспечения</item>
+        <item>Дизайн (по отраслям)</item>
+        <item>Операционная деятельность в логистике</item>
+    </string-array>
+    <string-array name="suggestion_specialties_bachelor">
+        <item>Программная инженерия</item>
+        <item>Информатика и вычислительная техника</item>
+        <item>Прикладная математика и информатика</item>
+        <item>Информационная безопасность</item>
+        <item>Информационные системы и технологии</item>
+        <item>Бизнес-информатика</item>
+        <item>Прикладная информатика</item>
+        <item>Радиотехника</item>
+        <item>Экономика</item>
+        <item>Менеджмент</item>
+        <item>Дизайн</item>
+    </string-array>
+    <string-array name="suggestion_specialties_specialist">
+        <item>Прикладная математика и информатика</item>
+        <item>Комплексное обеспечение информационной безопасности АС</item>
+        <item>Программная инженерия</item>
+        <item>Информатика и вычислительная техника</item>
+        <item>Автоматизированные системы обработки информации и управления</item>
+        <item>Вычислительные машины, комплексы, системы и сети</item>
+        <item>Экономическая безопасность</item>
+        <item>Лечебное дело</item>
+        <item>Юриспруденция</item>
+    </string-array>
+    <string-array name="suggestion_specialties_master">
+        <item>Программная инженерия</item>
+        <item>Прикладная математика и информатика</item>
+        <item>Информационная безопасность</item>
+        <item>Интеллектуальный анализ данных</item>
+        <item>Искусственный интеллект и машинное обучение</item>
+        <item>Управление разработкой программного обеспечения</item>
+        <item>Бизнес-информатика</item>
+    </string-array>
+    <string-array name="suggestion_specialties_postgraduate">
+        <item>Информатика и вычислительная техника</item>
+        <item>Математическое моделирование, численные методы и комплексы программ</item>
+        <item>Теоретические основы информатики</item>
+        <item>Методы и системы защиты информации</item>
+        <item>Экономическая теория</item>
+    </string-array>
+    <string-array name="suggestion_specialties_additional">
+        <item>Профессиональная переподготовка</item>
+        <item>Повышение квалификации</item>
+        <item>Data Science и анализ данных</item>
+        <item>Тестирование программного обеспечения</item>
+        <item>DevOps-инженерия</item>
+        <item>Управление проектами</item>
+    </string-array>
+
+    <!-- Списки мок-анализа (порядок элементов значим) -->
+    <string-array name="mock_strengths">
+        <item>Чёткая структура: все ключевые разделы резюме присутствуют</item>
+        <item>Релевантный стек технологий, подтверждённый проектами</item>
+        <item>Опыт изложен в хронологическом порядке без разрывов</item>
+        <item>Указаны контакты и локация — работодателю легко связаться</item>
+    </string-array>
+    <string-array name="mock_improvements">
+        <item>Добавить количественные результаты в описания проектов</item>
+        <item>Раскрыть роль в команде для последних проектов</item>
+        <item>Указать уровень владения иностранными языками</item>
+        <item>Дополнить раздел «О себе» ключевыми достижениями</item>
+    </string-array>
+    <string-array name="mock_recommendations">
+        <item>Переформулируйте 2–3 обязанности в достижения по схеме «действие → результат → метрика»</item>
+        <item>Вынесите самые сильные технологии в начало блока навыков</item>
+        <item>Добавьте ссылки на портфолио или репозитории</item>
+        <item>Перепроверьте единообразие форматирования дат и названий</item>
+    </string-array>
+    <!-- ==================== Заголовки CSV-колонок ==================== -->
+    <string name="csv_col_full_name">ФИО</string>
+    <string name="csv_col_position">Должность</string>
+    <string name="csv_col_total_experience">Общий опыт (лет)</string>
+    <string name="csv_col_spec_experience">Опыт по специализации (лет)</string>
+    <string name="csv_col_email">Email</string>
+    <string name="csv_col_phone">Телефон</string>
+    <string name="csv_col_city">Город</string>
+    <string name="csv_col_salary_from">Зарплата от</string>
+    <string name="csv_col_salary_to">Зарплата до</string>
+    <string name="csv_col_relocation">Релокация</string>
+    <string name="csv_col_relocation_cities">Города релокации</string>
+    <string name="csv_col_employment">Занятость</string>
+    <string name="csv_col_schedule">График</string>
+    <string name="csv_col_education">Образование</string>
+    <string name="csv_col_languages">Языки</string>
+    <string name="csv_col_os">ОС</string>
+    <string name="csv_col_prog_langs">Языки программирования</string>
+    <string name="csv_col_frameworks">Фреймворки</string>
+    <string name="csv_col_libraries">Библиотеки</string>
+    <string name="csv_col_databases">Базы данных</string>
+    <string name="csv_col_other_tech">Другие технологии</string>
+    <string name="csv_col_certifications">Сертификации</string>
+    <string name="csv_col_soft_skills">Гибкие навыки</string>
+    <string name="csv_col_achievements">Достижения</string>
+    <string name="csv_col_projects">Проекты</string>
+    <string name="csv_col_about">О себе</string>
+    <string name="csv_col_status">Статус</string>
+    <string name="csv_col_favorite">Избранное</string>
+    <string name="csv_col_modified">Изменено</string>
+    <string name="csv_yes">да</string>
+    <string name="csv_no">нет</string>
+
+    <!-- ==================== Помощь (FAQ) ==================== -->
+    <string name="help_intro">Частые вопросы о работе с приложением. Не нашли ответ — напишите нам.</string>
+    <string name="help_q1">Как создать резюме?</string>
+    <string name="help_a1">На главном экране нажмите кнопку «＋», заполните разделы формы — личные данные, образование, языки, навыки и проекты. Черновик сохраняется автоматически, а кнопка «Сохранить» создаст готовое резюме.</string>
+    <string name="help_q2">Зачем нужен API-ключ?</string>
+    <string name="help_a2">Ключ OpenRouter включает функции ИИ: анализ резюме, улучшение и генерацию текстов. Получите бесплатный ключ на openrouter.ai и вставьте его в настройках — ключ хранится только на вашем устройстве.</string>
+    <string name="help_q3">Как работает ИИ-анализ?</string>
+    <string name="help_a3">Откройте резюме и нажмите «Анализ»: модель оценит полноту, структуру и сильные стороны, предложит конкретные улучшения. Без настроенного ключа доступен демонстрационный вариант анализа.</string>
+    <string name="help_q4">Куда сохраняются экспортированные файлы?</string>
+    <string name="help_a4">PDF, DOCX и CSV доступны прямо из предпросмотра: можно открыть, распечатать или поделиться. При экспорте «в загрузки» файл появляется в папке Downloads устройства.</string>
+    <string name="help_q5">Можно ли вернуть удалённое резюме?</string>
+    <string name="help_a5">Да. Удалённые резюме попадают в корзину (Настройки → Корзина), откуда их можно восстановить. Очистка корзины удаляет резюме безвозвратно.</string>
+    <string name="help_q6">Как сменить язык интерфейса?</string>
+    <string name="help_a6">Настройки → Приложение → Язык интерфейса. Доступны русский и английский; перезапуск приложения не требуется.</string>
+
+    <!-- ==================== О приложении ==================== -->
+    <string name="about_description">СтафИИ помогает быстро собрать профессиональное резюме: умная форма с подсказками, шаблоны PDF, экспорт в DOCX и CSV, а также ИИ-анализ и улучшение текстов. Все данные хранятся локально на устройстве.</string>
+    <string name="about_version_label">Версия</string>
+    <string name="about_contact_title">Написать в поддержку</string>
+    <string name="about_contact_subject">СтафИИ: обращение из приложения</string>
+    <string name="about_share_title">Поделиться приложением</string>
+    <string name="about_share_text">Попробуйте СтафИИ — конструктор профессиональных резюме с ИИ</string>
+
+    <!-- ==================== Политика конфиденциальности ==================== -->
+    <string name="privacy_intro_title">Общие положения</string>
+    <string name="privacy_intro_body">СтафИИ уважает вашу приватность. Эта политика объясняет, какие данные обрабатывает приложение и как они защищены. Используя приложение, вы соглашаетесь с её условиями.</string>
+    <string name="privacy_storage_title">Данные хранятся только у вас</string>
+    <string name="privacy_storage_body">Резюме, фотографии, настройки и API-ключ сохраняются исключительно в памяти устройства и в локальных резервных копиях, которые вы создаёте сами. Мы не получаем доступа к этим данным и не собираем статистику использования.</string>
+    <string name="privacy_llm_title">Обработка данных ИИ-моделью</string>
+    <string name="privacy_llm_body">Функции анализа и улучшения текста передают содержимое вашего резюме в сервис OpenRouter для обработки языковой моделью — только по вашему явному действию и с вашим личным API-ключом. Если вы не пользуетесь ИИ-функциями, данные никуда не отправляются.</string>
+    <string name="privacy_permissions_title">Разрешения</string>
+    <string name="privacy_permissions_body">Доступ к фотографиям запрашивается только для добавления фото профиля по вашему выбору. Биометрическая блокировка выполняется системными средствами: отпечаток пальца и данные лица не покидают устройство и недоступны приложению.</string>
+    <string name="privacy_rights_title">Управление данными</string>
+    <string name="privacy_rights_body">Вы можете в любой момент отредактировать или удалить любое резюме, восстановить его из корзины или бэкапа, отключить биометрическую блокировку и выгрузить все данные одним файлом. Для полного удаления данных удалите приложение вместе с данными в настройках системы.</string>
+    <string name="privacy_changes_title">Изменения политики</string>
+    <string name="privacy_changes_body">Мы можем периодически обновлять эту политику. Актуальная редакция всегда доступна на этом экране, а существенные изменения сопровождаются обновлением даты ниже.</string>
+    <string name="privacy_contact_title">Контакты</string>
+    <string name="privacy_contact_body">Вопросы о политике конфиденциальности и обработке данных: %1$s</string>
+    <string name="privacy_effective_date">Редакция от 24 августа 2026 г.</string>
+
+    <!-- Годы опыта: год/года/лет (для PDF и карточек) -->
+    <plurals name="experience_years">
+        <item quantity="one">%1$d год</item>
+        <item quantity="few">%1$d года</item>
+        <item quantity="many">%1$d лет</item>
+        <item quantity="other">%1$d года</item>
+    </plurals>
+</resources>

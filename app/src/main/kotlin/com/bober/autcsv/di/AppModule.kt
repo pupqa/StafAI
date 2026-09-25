@@ -3,8 +3,10 @@ package com.bober.autcsv.di
 import android.app.Application
 import android.content.Context
 import androidx.room.Room
+import com.bober.autcsv.BuildConfig
 import com.bober.autcsv.data.api.llm.OpenRouterService
 import com.bober.autcsv.data.local.ResumeDatabase
+import com.bober.autcsv.data.local.dao.CoverLetterDao
 import com.bober.autcsv.data.local.dao.ResumeDao
 import com.bober.autcsv.data.repository.ResumeRepositoryImpl
 import com.bober.autcsv.domain.repository.ResumeRepository
@@ -36,9 +38,16 @@ object AppModule {
             .addMigrations(
                 ResumeDatabase.MIGRATION_1_2,
                 ResumeDatabase.MIGRATION_2_3,
-                ResumeDatabase.MIGRATION_3_4
+                ResumeDatabase.MIGRATION_3_4,
+                ResumeDatabase.MIGRATION_4_5,
+                ResumeDatabase.MIGRATION_5_6,
+                ResumeDatabase.MIGRATION_6_7,
+                ResumeDatabase.MIGRATION_7_8,
+                ResumeDatabase.MIGRATION_8_9
             )
-            .fallbackToDestructiveMigration(false)
+            // В debug забытая миграция просто пересоздаёт базу; в release
+            // отсутствие миграции — падение, а не молчаливая потеря резюме
+            .apply { if (BuildConfig.DEBUG) fallbackToDestructiveMigration(false) }
             .build()
     }
 
@@ -49,13 +58,28 @@ object AppModule {
 
     @Provides
     @Singleton
+            /** Провайдер DAO сопроводительных писем. */
+    fun provideCoverLetterDao(db: ResumeDatabase): CoverLetterDao = db.coverLetterDao
+
+    @Provides
+    @Singleton
             /** Репозиторий резюме: БД + LLM сервис + контекст (для PDF). */
     fun provideResumeRepository(
+        db: ResumeDatabase,
         dao: ResumeDao,
+        coverLetterDao: CoverLetterDao,
+        pdfStyleStore: com.bober.autcsv.core.pdf.PdfStyleStore,
         openRouterService: OpenRouterService,
         @ApplicationContext context: Context,
     ): ResumeRepository {
-        return ResumeRepositoryImpl(dao, openRouterService, context)
+        return ResumeRepositoryImpl(
+            db,
+            dao,
+            coverLetterDao,
+            pdfStyleStore,
+            openRouterService,
+            context
+        )
     }
 
     @Provides
@@ -64,4 +88,4 @@ object AppModule {
     fun provideGson(): Gson {
         return Gson()
     }
-} 
+}

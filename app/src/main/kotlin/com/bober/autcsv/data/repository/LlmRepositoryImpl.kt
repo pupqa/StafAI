@@ -1,5 +1,6 @@
 package com.bober.autcsv.data.repository
 
+import androidx.appcompat.app.AppCompatDelegate
 import com.bober.autcsv.core.constants.LlmConstants
 import com.bober.autcsv.core.utils.LlmLogger
 import com.bober.autcsv.core.utils.LlmResponseProcessor
@@ -10,15 +11,30 @@ import com.bober.autcsv.data.api.llm.dto.MessageDto
 import com.bober.autcsv.data.api.llm.dto.ResponseFormatDto
 import com.bober.autcsv.domain.model.CvAnalysis
 import com.bober.autcsv.domain.repository.LlmRepository
+import kotlinx.coroutines.delay
 import retrofit2.HttpException
 import javax.inject.Inject
 import javax.inject.Named
 import kotlin.Result
 
+/** Пустой разбор без единого значимого поля — ответ модели не распарсился. */
+private fun CvAnalysis.isBlank(): Boolean =
+    rating == 0 && completenessScore == 0 &&
+            strengths.isEmpty() && improvements.isEmpty() &&
+            recommendations.isEmpty() && completenessAnalysis.isBlank() &&
+            logicAnalysis.isBlank()
+
 class LlmRepositoryImpl @Inject constructor(
     private val api: OpenRouterApi,
-    @Named("openrouter_api_key") private val apiKey: String,
+    private val apiKeyStore: com.bober.autcsv.core.utils.ApiKeyStore,
+    /** Ключ из BuildConfig — резерв. */
+    @Named("openrouter_api_key") private val buildKey: String,
 ) : LlmRepository {
+
+    /** Пауза перед следующей попыткой после ошибки модели/лимита. */
+    private companion object {
+        const val RETRY_DELAY_MS = 800L
+    }
 
     // Список моделей в порядке приоритета (от лучшей к худшей)
     private val modelPriority = listOf(
@@ -29,14 +45,14 @@ class LlmRepositoryImpl @Inject constructor(
         OpenRouterConfig.MISTRAL_LARGE,
         OpenRouterConfig.MISTRAL_MEDIUM,
         OpenRouterConfig.MISTRAL_SMALL,
-        OpenRouterConfig.OPENCHAT,
-        OpenRouterConfig.GEMMA,
-        OpenRouterConfig.PHI,
-        OpenRouterConfig.QWEN_4B,
-        OpenRouterConfig.QWEN_18B
+        OpenRouterConfig.QWEN_14B,
+        OpenRouterConfig.QWEN_7B,
+        OpenRouterConfig.LLAMA_8B,
+        OpenRouterConfig.GEMMA
     )
 
     override suspend fun analyzeCV(cvContent: String): Result<CvAnalysis> = runCatching {
+        val apiKey = apiKeyStore.getUserKey().ifBlank { buildKey }
         if (apiKey.isBlank()) {
             LlmLogger.logError("API ключ не настроен")
             throw IllegalStateException("API ключ не настроен")
@@ -44,6 +60,11 @@ class LlmRepositoryImpl @Inject constructor(
 
         // Адаптивные настройки токенов
         val tokenLevels = listOf(2000, 1000, 300, 200, 100, 50)
+
+        // Язык ответа модели — под язык интерфейса приложения
+        val respondInEnglish =
+            AppCompatDelegate.getApplicationLocales()[0]?.language == "en"
+        val systemPrompt = LlmConstants.systemPrompt(respondInEnglish)
 
         // Пробуем разные модели в порядке приоритета
         var lastError: Exception? = null
@@ -68,7 +89,7 @@ class LlmRepositoryImpl @Inject constructor(
                         messages = listOf(
                             MessageDto(
                                 role = "system",
-                                content = LlmConstants.SYSTEM_PROMPT
+                                content = systemPrompt
                             ),
                             MessageDto(
                                 role = "user",
@@ -87,7 +108,7 @@ class LlmRepositoryImpl @Inject constructor(
                     // Логируем детали запроса для диагностики
                     LlmLogger.logDebug("Отправляем запрос к модели: $model")
                     // Не логируем ключ даже частично в проде
-                    LlmLogger.logDebug("Длина системного промпта: ${LlmConstants.SYSTEM_PROMPT.length}")
+                    LlmLogger.logDebug("Длина системного промпта: ${systemPrompt.length}")
                     LlmLogger.logDebug("Длина контента пользователя: ${cvContent.length}")
                     LlmLogger.logDebug("maxTokens: $maxTokens")
 
@@ -120,7 +141,16 @@ class LlmRepositoryImpl @Inject constructor(
                         )
                     }
 
-                    return@runCatching LlmResponseProcessor.parseJson(content)
+                    val analysis = LlmResponseProcessor.parseJson(content)
+
+                    // Пустой разбор = модель вернула мусор: считаем попытку
+                    // проваленной и уходим к следующей модели, а не отдаём
+                    // пользователю «успешный» пустой анализ
+                    if (analysis.isBlank()) {
+                        throw IllegalStateException("Модель $model вернула нечитаемый JSON-ответ")
+                    }
+
+                    return@runCatching analysis
 
                 } catch (e: HttpException) {
                     lastError = e
@@ -135,6 +165,10 @@ class LlmRepositoryImpl @Inject constructor(
                     }
                     LlmLogger.logError(errorMessage, e)
 
+                    // Пауза между попытками: без backoff подряд идущие запросы
+                    // на 429/лимитах только усугубляют троттлинг
+                    delay(RETRY_DELAY_MS)
+
                     // Если это ошибка 402, продолжаем с меньшим количеством токенов
                     if (e.code() == 402) {
                         continue
@@ -144,6 +178,7 @@ class LlmRepositoryImpl @Inject constructor(
                 } catch (e: Exception) {
                     lastError = e
                     LlmLogger.logError("Ошибка с моделью $model: ${e.message}", e)
+                    delay(RETRY_DELAY_MS)
                     break // Переходим к следующей модели
                 }
             }

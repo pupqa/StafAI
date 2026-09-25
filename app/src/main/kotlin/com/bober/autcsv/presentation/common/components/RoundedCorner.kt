@@ -19,7 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.bober.autcsv.ui.theme.CYellow
+import com.bober.autcsv.ui.theme.AppColors
 import com.bober.autcsv.ui.theme.Gray
 import com.bober.autcsv.ui.theme.White
 
@@ -58,9 +58,9 @@ fun RoundedCorner(
                 unfocusedTextColor = Gray.copy(alpha = 0.8f),
                 focusedTextColor = White,
                 unfocusedPlaceholderColor = Gray.copy(alpha = 0.6f),
-                focusedPlaceholderColor = CYellow.copy(alpha = 0.8f),
-                cursorColor = CYellow,
-                focusedLabelColor = CYellow,
+                focusedPlaceholderColor = AppColors.Accent.copy(alpha = 0.8f),
+                cursorColor = AppColors.Accent,
+                focusedLabelColor = AppColors.Accent,
                 unfocusedLabelColor = Gray
             ),
             modifier = Modifier
